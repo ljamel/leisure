@@ -1,0 +1,9 @@
+rewriteEngine On
+#RewritrRule /cadito/public/ok /cadito/public/ [NC]
+#Redirect 301 cadito/public/ok ^redirection/$
+#<Files ~ "^\.(htaccess|htpasswd)$">
+#deny from all
+#</Files>
+#Options Indexes
+Redirect permanent cadito/cadito/public/ok /cadito/public/
+#order deny,allow

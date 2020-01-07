@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+
+okokokok
+	
+        {{ form_start(form, {
+                    'attr': {
+                        'novalidate': 'novalidate',
+                        'class': 'col-lg-5' 
+                        }
+                    })
+                }}
+            {{ form_row(form.title) }}
+            {{ form_row(form.content) }}
+
+            <button type="submit" class="btn btn-primary">Créer</button>
+        {{ form_end(form) }}
+	
+
+{% endblock %}

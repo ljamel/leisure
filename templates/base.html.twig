@@ -5,11 +5,10 @@
         <meta name="viewport" content="width=device-width, user-scalable=no">
         <meta name="viewport" content="width=500, initial-scale=1">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block head %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block content %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
-    <footer>Footer</footer>
 </html>

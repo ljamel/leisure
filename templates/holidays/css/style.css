@@ -1,0 +1,1136 @@
+body {
+    height: 300px;
+    font-family: 'Roboto', sans-serif;
+    color: #1F1A21;
+    margin: 0px;
+}
+
+form {
+    margin-top: 20px;
+}
+.blue {
+    color: rgb(18, 159, 250);
+}
+
+.white {
+    color: white;
+}
+
+.white:hover {
+    color:#00BFFF;
+}
+
+
+.none {
+    display: none;
+}
+
+.display {
+    display: flex;
+    justify-content: space-between;
+}
+
+.leg {
+    position: fixed;
+    font-size: 11px;
+    bottom: 0;
+    width: 83px;
+    background-color: #eaf0f6;
+}
+
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#map {
+    height: 590px;
+    width: 100%;
+    margin-bottom: 240px;
+}
+
+#mapInfo {
+    display: flex;
+    margin-top: 70px;
+}
+
+#infoLoisirs {
+    display: none;
+    width: 30%;
+    border-color: #E5E5E5;
+    border-style: solid;
+}
+
+#imageMap {
+    width: 100%;
+}
+
+p {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 5px;
+    text-align: justify;
+    font-family: 'Philosopher', sans-serif;
+    min-width: 96px;
+}
+
+h2 {
+    margin-left: 15px;
+    margin-top: 1px;
+    margin-bottom: 10px;
+    color: #129FFA;
+}
+
+
+h1 {
+    margin: 0px;
+    margin-top: 2px;
+    font-family: copse regular;
+}
+
+.reserver {
+    background-color: #07C18E;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 275px;
+    color: white;
+}
+
+.promo-bouton {
+    background-color: #07C18E;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+.reserver:hover {
+    background-color: #00FFC2;
+    cursor: pointer;
+    color: white;
+}
+
+/* Menu et entête */
+#menu-mobile {
+    display: none;
+}
+
+#menu-close {
+    display: none;
+}
+
+.dropdown-menu > li > a:hover {
+    background-color: transparent;
+}
+
+.btn.btn-default.btn-lg.dropdown-toggle {
+    background-color: transparent;
+    border: none;
+    margin: 5px;
+}
+
+.dropdown-menu {
+    width: 177px;
+    left: 6px;
+}
+
+.title {
+    display: block;
+}
+
+
+.center {
+    text-align: center;
+}
+
+.suivant {
+}
+
+a {
+    text-decoration: none;
+    color: #1f1a21;
+}
+
+ul {
+    display: inline;
+    list-style: none;
+    text-align: right;
+    margin: 1px;
+    font-size: 1.2em;
+    margin-top: 16px;
+}
+
+li {
+    display: inline;
+    margin: 5px;
+}
+
+li a:hover:not(.suivant.dropdown-menu) {
+    border-top-style: solid;
+    padding-top: 13px;
+}
+
+a:focus, a:hover {
+    color: #23527c;
+    text-decoration: none;
+}
+
+.connect {
+    margin: 18px;
+}
+
+#menu-header {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 2;
+    box-shadow: 0 0 21px 0 rgba(0, 0, 0, 0.4);
+}
+
+nav {
+    display: flex;
+}
+
+
+.texte-slide1 {
+    margin-top: 140px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-size: large;
+    width: 80%;
+}
+
+.texte-slide2 {
+    margin-top: 140px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-size: large;
+    width: 80%;
+}
+
+.boutons {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: x-large;
+    margin-top: -300px;
+}
+
+.fa {
+    font-size: 40px;
+}
+
+.fa-min {
+    font-size: 15px;
+    color: #0006;
+}
+
+.fa-moyen {
+    font-size: 21px;
+    margin-left: 12px;
+}
+
+.parasol {
+    width: 40px;
+}
+
+.sous-cat {
+    display: none;
+    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 80px;
+    background-color: honeydew;
+    position: relative;
+}
+
+.sous-cat:hover {
+    display: flex;
+}
+
+.fa.fa-bicycle.fa-min.fa-cat:hover + .sous-cat {
+    display: flex;
+}
+
+.sous-cat-plans:hover {
+    display: flex;
+}
+
+.fa.fa-map-o.fa-min.fa-cat:hover + .sous-cat-plans {
+    display: flex;
+}
+
+.sous-cat-plans {
+    display: none;
+    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 80px;
+    background-color: honeydew;
+    position: relative;
+}
+
+#bouton-slide-left {
+    padding: 14px;
+    cursor: pointer;
+}
+
+#bouton-slide-right {
+    padding: 14px;
+    cursor: pointer;
+}
+
+.rectangle {
+    background-color: #00BFFF;
+    color: white;
+    padding: 10px;
+    width: 102px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.rectangle:hover {
+    background-color: #193D5A;
+    cursor: pointer;
+    color: white;
+}
+
+.margin-result {
+    margin: 30px;
+}
+
+/* Formulaire de recherche section 2 */
+
+.ico-recherche {
+    position: relative;
+    left: 35px;
+}
+
+.img-sous-menu {
+    background: url("/images/00cde0651656ce487431d1f49f74b094cat-map.jpg") no-repeat;
+    background-size: 104px;
+    box-shadow: inset 2050px 0 0 rgba(0, 0, 0, 0.26);
+    color: white;
+    height: 80px;
+    width: 104px;
+    margin: 5px;
+}
+
+.img-sous-menu-enfants {
+    background: url("/images/cat-loisir-bebe.jpg") no-repeat;
+    background-size: 104px;
+    box-shadow: inset 2050px 0 0 rgba(0, 0, 0, 0.26);
+    color: white;
+    height: 80px;
+    width: 104px;
+    margin: 5px;
+}
+
+.img-sous-menu-famille {
+    background: url("/images/cat-loisir-famille.jpg") no-repeat;
+    background-size: 104px;
+    box-shadow: inset 2050px 0 0 rgba(0, 0, 0, 0.26);
+    color: white;
+    height: 80px;
+    width: 104px;
+    margin: 5px;
+}
+
+.img-sous-menu-senior {
+    background: url("/images/cat-loisir-ager.jpg") no-repeat;
+    background-size: 104px;
+    box-shadow: inset 2050px 0 0 rgba(0, 0, 0, 0.26);
+    color: white;
+    height: 80px;
+    width: 104px;
+    margin: 5px;
+}
+
+.geoloc {
+    background: url("/images/00cde0651656ce487431d1f49f74b094cat-map.jpg") no-repeat;
+    background-size: 104px;
+    box-shadow: inset 2050px 0 0 rgba(0, 0, 0, 0.26);
+    color: white;
+    height: 80px;
+    width: 104px;
+    margin: 5px;
+}
+
+.normandie {
+    background: url("/images/carte-normandie-anne-olivia-messana-clio-de-fregon-1000.jpg") no-repeat;
+    background-size: 104px;
+    box-shadow: inset 2050px 0 0 rgba(0, 0, 0, 0.26);
+    color: white;
+    height: 80px;
+    width: 104px;
+    margin: 5px;
+}
+
+.paris {
+    background: url("/images/cartedeparisfr.jpg") no-repeat;
+    background-size: 104px;
+    box-shadow: inset 2050px 0 0 rgba(0, 0, 0, 0.26);
+    color: white;
+    height: 80px;
+    width: 104px;
+    margin: 5px;
+}
+
+.title-cat {
+    margin-top: 32px;
+    display: inline-block;
+    font-size: 18px;
+
+}
+
+.age {
+    display: flex;
+    position: relative;
+    margin-left: 29px;
+    margin-bottom: -30px;
+    font-size: 20px;
+}
+
+#formulaire-recherche {
+    margin-top: 130px;
+    margin-bottom: 35px;
+    background-color: rgba(255, 255, 255, 0.59);
+    height: 100px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 17px;
+}
+
+.fa-cat {
+    display: initial;
+    padding: 9px;
+    padding-right: 11px;
+    padding-bottom: 5px;
+    background-color: white;
+    width: 19px;
+    margin-left: 25px;
+    color: black;
+    font-size: 20px;
+    border-radius: 3px;
+}
+
+input {
+    text-align: center;
+    width: 146px;
+    border-color: #cbcbcbb3;
+    border-style: none;
+}
+
+.fileUpload input.upload {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    margin-bottom: -20px;
+}
+
+select {
+    margin-top: 10px;
+    margin-left: 15px;
+    padding: 7px;
+    width: 125px;
+    border-color: #cbcbcbb3;
+    border-style: none;
+}
+
+.queFaire {
+    margin-bottom: 0px;
+    display: initial;
+}
+
+.recherche {
+    background-color: #00BFFF;
+    color: white;
+    border: none;
+    width: 130px;
+    margin-left: 22px;
+    font-size: 18px;
+    padding: 7px;
+}
+
+/* Menu déroulant */
+.custom-dropdown--large {
+    font-size: 1.5em;
+}
+
+.custom-dropdown--small {
+    font-size: .7em;
+}
+
+.custom-dropdown__select {
+    font-size: inherit; /* inherit size from .custom-dropdown */
+    margin: 0; /* remove default margins */
+}
+
+.custom-dropdown__select--white {
+    background-color: #fff;
+    color: #444;
+}
+
+@supports (pointer-events: none) and
+      ((-webkit-appearance: none) or
+      (-moz-appearance: none) or
+      (appearance: none)) {
+
+    .custom-dropdown {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 2px;
+        z-index: 0;
+        width: 112px;
+    }
+
+    .custom-dropdown__select {
+        border: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        margin-left: 4px;
+        width: 101px;
+    }
+
+    .custom-dropdown::before,
+    .custom-dropdown::after {
+        content: "";
+        position: absolute;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .custom-dropdown::after { /*  Custom dropdown arrow */
+        content: "\25BC";
+        height: 1em;
+        font-size: .625em;
+        line-height: 1;
+        right: 0;
+        top: 20px;
+        margin-top: -.5em;
+    }
+
+    .custom-dropdown::before { /*  Custom dropdown arrow cover */
+        width: 2em;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border-radius: 0 3px 3px 0;
+    }
+
+    .custom-dropdown__select[disabled] {
+        color: rgba(0, 0, 0, .3);
+    }
+
+    .custom-dropdown.custom-dropdown--disabled::after {
+        color: rgba(0, 0, 0, .1);
+    }
+
+    /* White dropdown style */
+    .custom-dropdown--white::before {
+        top: .5em;
+        bottom: .5em;
+        border-left: 1px solid rgba(0, 0, 0, .1);
+    }
+
+    .custom-dropdown--white::after {
+        color: rgba(0, 0, 0, .9);
+    }
+
+    /* FF only temp fix */
+    @-moz-document url-prefix() {
+        .custom-dropdown--large .custom-dropdown__select {
+            padding-right: 1.3em
+        }
+        .custom-dropdown--small .custom-dropdown__select {
+            padding-right: .5em
+        }
+    }
+}
+
+.recherche:hover {
+    background-color: #193D5A;
+    cursor: pointer;
+    color: white;
+}
+
+#outils-recherche {
+    display: none;
+}
+
+.icone-date {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Main section 3 */
+
+#main {
+    margin-bottom: 100px;
+    margin-left: 10%;
+}
+
+#unique {
+    margin-top: 80px;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+}
+
+.adress {
+    font-size: 17px;
+}
+
+.title-show {
+    text-align: justify;
+    display: flex;
+    margin: 137px;
+    align-items: flex-start;
+    border: 1px solid gainsboro;
+    background-color: #FEFEFE;
+}
+
+#comment_note {
+    border-style: solid;
+}
+
+.alert {
+    padding: 5px;
+    background-color: #f44336;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.6s;
+    margin-bottom: 0;
+    position: fixed;
+    bottom: 0;
+}
+
+.alert.success {
+    background-color: #4CAF50;
+}
+
+.alert.info {
+    background-color: #2196F3;
+}
+
+.alert.warning {
+    background-color: #ff9800;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+.texte-show {
+    width: 400px;
+}
+
+.info-unique {
+    font-size: 19px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.69);
+}
+
+.text-show {
+    margin-left: 137px;
+}
+
+.type {
+    margin-left: 50px;
+    font-size: 20px;
+}
+
+article {
+    margin-top: 50px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flex-meteo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.liste-main {
+    display: inline-block;
+    width: 425px;
+    background-color: #F6F7F8;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.34);
+}
+
+img.liste-main {
+    height: 300px;
+}
+
+img.liste-main-unique {
+    margin-left: 15px;
+    width: 400px;
+}
+
+.form-control {
+    width: 500px;
+}
+
+.shadow-none {
+    box-shadow: 0 0 17px 0 rgba(0, 0, 0, 0.3);
+}
+
+.shadow-none:hover {
+    box-shadow: none;
+}
+
+.liste-main-resultat {
+    display: inline-block;
+    background-color: #F6F7F8;
+    height: 150px;
+}
+
+.liste-resultat {
+    display: flex;
+    background-color: #F6F7F8;
+    margin-left: 10%;
+    margin-right: 71px;
+    margin-top: 50px;
+    height: 251px;
+    overflow: hidden;
+}
+
+.liste-resultat.contact {
+    height: 900px;
+    margin-top: 112px;
+}
+
+.promo-acceuil {
+    display: inline-block;
+    background-color: #F6F7F8;
+    height: 250px;
+}
+
+.liste-resultat:hover {
+    background-color: rgba(0, 0, 0, 0.13);
+}
+
+.prix {
+    text-align: right;
+    color: white;
+    width: 112px;
+    padding: 12px;
+    background-color: #07C18E;
+    height: 38px;
+}
+
+.prix-unique {
+    color: #129FFA;
+}
+
+.articleTitle {
+    display: grid;
+}
+
+.meteo {
+    width: 120px;
+}
+
+div#page {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 30px;
+    background-color: white;
+    box-shadow: 0px 1px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* administration */
+
+.bouton {
+    width: 190px;
+}
+
+.form-connection {
+    background-color: #bdbdbd;
+    padding: 10px;
+    text-align: center;
+}
+
+.image-result-map {
+    width: 100%;
+}
+
+/* Footer */
+
+#footer {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #212121;
+    color: white;
+}
+
+.texte-footer {
+    width: 205px;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+}
+.annonce {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#copyright {
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.block {
+    display: block;
+}
+
+.scroll-top-inner {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    color: #00BFFF;
+}
+
+hr {
+    margin: 5px 5px 5px 0px;;
+    width: 50%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: none; /*on supprime le style par défaut*/
+}
+
+.col-sm-4-note {
+    width: 0;
+}
+
+#comment_content {
+    width: 50%;
+}
+
+button {
+    background-color: white;
+    border: none;
+    padding: 0;
+}
+
+.modal-dialog {
+    width: 50%;
+}
+
+.modla-img {
+    max-width: 100%;
+    max-height: 570px;
+    min-width: 720px;
+}
+
+.btn.btn-default.btn-primary {
+    margin-left: 9px;
+}
+
+#loisir_position {
+    width: 230px;
+    padding: 7px;
+}
+
+.fb-like.fb_iframe_widget {
+    width: 20px;
+    margin-left: 15px;
+}
+._51mx:last-child > ._51m- {
+
+    display: inline-flex;
+    justify-content: center;
+    margin: 4px;
+}
+
+.title-contact {
+    margin-top: 65px;
+    text-align: center;
+}
+
+
+@media screen and (min-width: 780px) {
+    /* slide */
+    #img-slide1 {
+        display: flex; /* pour que le texte rentre dans l'image slide */
+        background-image: url('../images/panorama-vert.jpg');
+        background-size: cover;
+        height: 460px;
+        box-shadow: inset 2050px 0 0 rgba(0, 0, 0, 0.18);
+    }
+
+    #img-slide2 {
+        background-image: url('../images/bateau.jpg');
+        display: none;
+        background-size: cover;
+        height: 460px;
+        box-shadow: inset 2050px 0 0 rgba(0, 0, 0, 0.18);
+    }
+}
+
+
+/*Formats mobile*/
+@media screen and (max-width: 780px) {
+
+    /* menu */
+    .title {
+        display: none;
+    }
+
+    form {
+        display: none;
+    }
+
+    /* slide */
+    #img-slide1 {
+        display: flex; /* pour que le texte rentre dans l'image slide */
+        background-image: url('../images/bateau.jpg');
+        background-size: cover;
+        height: 460px;
+        box-shadow: inset 2050px 0 0 rgba(0, 0, 0, 0.18);
+    }
+
+    #img-slide2 {
+        background-image: url('../images/panorama-vert.jpg');
+        display: none;
+        background-size: cover;
+        height: 460px;
+        box-shadow: inset 2050px 0 0 rgba(0, 0, 0, 0.18);
+    }
+
+    .recherche-mobile {
+        background-color: #00BFFF;
+        color: white;
+        padding: 30px;
+        margin-left: 95px;
+        display: flex;
+        justify-content: baseline;
+        margin-right: 110px;
+        margin-top: 46px;
+    }
+
+    .liste-main.shadow-none {
+        margin: 6px;
+        width: 97%;
+        box-shadow: 0 0 17px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    #loisir_position {
+        width: 230px;
+        background-color: transparent;
+        color: transparent;
+        display: ruby-base-container;
+    }
+
+    .custom-dropdown {
+        margin: 20px;
+        margin-bottom: 0px;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 48px;
+    }
+
+    p {
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    h2 {
+        margin-left: 0;
+        margin-top: 12px;
+        text-align: center;
+    }
+
+    .texte-slide1 {
+        margin-top: 40px;
+    }
+
+    .texte-slide2 {
+        margin-top: 40px;
+    }
+
+    #menu-mobile {
+        display: block;
+    }
+
+    #deroul-menu {
+        display: none;
+    }
+
+    .fa-bars {
+        margin: 5px;
+        color: #00BFFF;
+    }
+
+    .fa-times {
+        color: #00BFFF;
+        margin-bottom: -40px;
+    }
+
+    ul {
+        margin: 0px;
+        padding-left: 0px;
+    }
+
+    li {
+        display: block;
+        background-color: rgba(31, 26, 33, 0.8);
+        font-size: 30px;
+        margin: 0px;
+        text-align: center;
+        width: 220px;
+    }
+
+    li a {
+        color: white;
+    }
+
+    input:not(.btn-primary) {
+        width: 299px;
+        margin-top: 0;
+        margin-left: 16px;
+    }
+
+    ul#deroul-menu {
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 20000; /* pour que le menu ne soit pas cacher par google map qui a mis un z-index 2000  */
+    }
+
+    div#page {
+        display: none;
+    }
+
+    /* slide */
+    .texte-slide1 {
+        width: 100%;
+    }
+
+    .texte-slide2 {
+        width: 100%;
+    }
+
+    /* formulaire de recherche */
+    #formulaire-recherche {
+        height: 156px;
+        max-width: 100%;
+        margin-top: 104px;
+    }
+
+    .ico-recherche {
+        display: none;
+    }
+
+    #main {
+        margin-left: 0px;
+    }
+
+    .liste-main {
+        max-width: 100%;
+        margin-right: 0px;
+    }
+
+    .reserver {
+        margin-left: 0px;
+        padding: 5px;
+    }
+
+    .liste-resultat {
+        display: table;
+        width: 100%;
+        margin: 0px;
+        /* margin-bottom: 10px; */
+        margin-top: 55px;
+    }
+
+    .queFaire {
+        margin-bottom: 0px;
+        display: table-column;
+    }
+
+    .pager {
+        display: none;
+    }
+
+    .title-show {
+        display: block;
+        margin: 0;
+        margin-top: 50px;
+    }
+
+    .text-show {
+        margin-left: 0;
+    }
+
+    .text-center {
+        margin-top: 50px;
+    }
+
+    img.liste-main-unique {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .promo-acceuil {
+        width: 100%;
+    }
+
+    .form-control {
+        width: 100%;
+    }
+
+    #mapInfo {
+        display: block;
+        width: 100%;
+    }
+
+    #infoLoisirs {
+        width: 100%;
+    }
+
+    #map {
+        width: 100%;
+    }
+
+    #comment_content {
+        width: 100%;
+    }
+
+    .connect {
+        display: none;
+    }
+}
+
+
+

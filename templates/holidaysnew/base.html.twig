@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+        <link rel="stylesheet" href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.min.css') }}">
+        {% block stylesheets %}
+            <!-- {{ encore_entry_link_tags('app') }} -->
+
+            <link rel="stylesheet" href="/cadito/public/build/app.css">
+        {% endblock %}
+        <title>{% block title %}{% endblock %} - My Webpage</title>
+    	<meta name="viewport" content="initial-scale=1.0">
+    {% endblock %}
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top border-bottom flex">
+        <a class="navbar-brand text-uppercase" href="#">Loisirs et sorties culturelles</a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse" id="navbarsExample09" style="">
+                <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                                <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+                        </li>
+						<li class="nav-item active">
+                                <a class="nav-link" href="#">Idées loisirs <span class="sr-only">(current)</span></a>
+                        </li>
+						<li class="nav-item active">
+                                <a class="nav-link" href="#">Contact <span class="sr-only">(current)</span></a>
+                        </li>
+                </ul>
+
+        </div>
+</nav>
+
+<div id="content">{% block content %}{% endblock %}</div>
+<div id="footer">
+    {% block footer %}
+        &copy; Copyright 2011 by <a href="http://domain.invalid/">you</a>.
+    {% endblock %}
+</div>
+<div class="alert alert-primary" role="alert">
+        A simple primary alert—check it out!
+</div>
+<div class="alert alert-secondary" role="alert">
+        A simple secondary alert—check it out!
+</div>
+
+<script src="{{ path('cad_index') }}/js/jquery.js"></script>
+<script src="{{ asset('../vendor/twbs/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+</body>
+</html>

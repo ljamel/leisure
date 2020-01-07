@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Template progfacile.com</title>
+    <meta name="description" content=""/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
+    <link rel="stylesheet" href="/templates/holidays/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.common.dev.js"></script>
+</head>
+<BODY>
+<div id="haut"></div>
+<div id="menu-header">
+    <h1>
+        <a class="title blue" href="/">Loisirs et sortie culturelle</a>
+    </h1>
+    <nav>
+
+        <i id="menu-mobile" class="fa fa-bars fa-3x" aria-hidden="true"></i> <i id="menu-close"
+                                                                                class="fa fa-times fa-3x none"
+                                                                                aria-hidden="true"></i>
+        <ul id="deroul-menu">
+            <li><a class="blue" href="/"> Accueil </a></li>
+            <li><a class="blue" href="/geoloc"> Idée loisirs </a></li>
+            <li><a class="blue" href="/contact"> Contact </a></li>
+        </ul>
+    </nav>
+</div>
+
+
+<!-- Section 1 slide -->
+<div id="slide">
+    <div id="img-slide1">
+
+        <div class="texte-slide1">
+            <h2 class="white">Vous cherchez une idée loisir</h2>
+            <p>Vous êtes au bon endroit.<br/> Mise a jours régulière des sorties et événement.<br/> Avec la
+                géolocalisation trouvez les activités prêt de chez vous.
+            </p>
+            <a href="geoloc">
+                <p class="rectangle">PLANS <i class="fa fa-angle-right fa-moyen" aria-hidden="true"></i></p>
+            </a>
+        </div>
+    </div>
+
+    <div id="img-slide2">
+        <div class="texte-slide2">
+            <h2 class="white">Divertissement pour toutes la familles </h2>
+            <p>Découvrez les loisirs, lieux touristiques et séjours.<br/> Une liste de suggestions de loisirs et
+                vacances via le lien ci dessous.<br/> Quel que soit votre budget vous trouverez forcément une activité
+                pour vous.
+            </p>
+            <a href="geoloc">
+                <p class="rectangle">LISTE <i class="fa fa-angle-right fa-moyen" aria-hidden="true"></i></p>
+            </a>
+        </div>
+    </div>
+
+    <div class="boutons">
+        <div id="bouton-slide-left"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
+        <div id="bouton-slide-right"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+    </div>
+</div>
+
+<div id="formulaire-recherche">
+
+    <p class="queFaire">Que faire</p>
+    <span class="fa fa-bicycle fa-min fa-cat" title="loisirs"></span>
+    <span class="sous-cat">
+        <a href="/liste/?cat=1" title="enfants"><span class="img-sous-menu-enfants age">Enfant</span></a>
+	<a href="/liste/?cat=0" title="toutes la famille"><span
+            class="img-sous-menu-famille age">Toutes la famille</span></a>
+	<a href="/liste/?cat=2" title="senior"><span class="img-sous-menu-senior age">Senior</span></a>
+	</span>
+    <i class="fa fa-map-o fa-min fa-cat" title="Plans"></i> <span class="sous-cat-plans">
+        <a href="geoloc" title="Me localiser"><span class="img-sous-menu geoloc title-cat">Me localiser</span></a>
+	<a href="/ville/?loisirpositionLat=48.856614&loisirpositionLng=2.3522219000000177" title="Paris"><span
+            class="img-sous-menu paris title-cat">Paris</span></a>
+	<a href="/ville/?loisirpositionLat=49.4324805&loisirpositionLng=1.0819719999999506" title="Normandie"><span
+            class="img-sous-menu normandie title-cat">Normandie</span></a>
+	</span>
+
+
+    <form action="result" method="post">
+		<span class="custom-dropdown custom-dropdown--white">
+            <label class="col-sm-4 control-label none required" for="loisir_Distance">Distance</label>
+            <span class="col-sm-6">
+                
+                <select id="loisir_Distance" name="loisir[Distance]"
+                        class="custom-dropdown__select custom-dropdown__select--white"><option
+                        value="0.10">10 Kms</option><option value="0.20">20 Kms</option><option
+                        value="0.56">56 Kms</option><option value="1.10">110 Kms</option></select>
+            </span>
+		</span>
+
+        <i class="fa fa-map-marker fa-min ico-recherche" title="Loisirs"></i>
+        <label class="col-sm-4 control-label none required" for="loisir_position">Position</label>
+
+        <input type="text" id="loisir_position" name="loisir[position]" required="required" class=""
+               value="Adresse de départ"/>
+
+        <span id="position"></span>
+
+        <i id="date-open" class="fa fa-calendar recherche-mobile icone-date" aria-hidden="true"
+           onclick="menuOpen.openDate()"></i>
+
+        <span id="outils-recherche">
+            <i class="fa fa-calendar fa-min ico-recherche" aria-hidden="true"></i>
+
+            <label class="col-sm-4 control-label none required" for="loisir_dateDebut">Date debut</label>
+                
+                <input type="text" id="loisir_dateDebut" name="loisir[dateDebut]" required="required"
+                       value="12, 31, 2017"/>
+            <i class="fa fa-calendar fa-min ico-recherche" aria-hidden="true"></i>
+
+            <label class="col-sm-4 control-label none required" for="loisir_dateFin">Date fin</label>
+                
+                <input type="text" id="loisir_dateFin" name="loisir[dateFin]" required="required" value="12, 31, 2030"/>
+        </span>
+
+        <input id="pac-input" class="recherche" type="submit" value="Chercher">
+    </form>
+    <a href="/geoloc" class="recherche-mobile none">Me localiser</a>
+</div>
+
+
+<div id="main">
+    <div class="display">
+        <h1> BON PLANS </h1>
+        <p><a href="/geoloc" TITLE="Liste des loisirs"> VOIR TOUT <i class="fa fa-angle-double-right fa-moyen"
+                                                                     aria-hidden="true"></i> </a></p>
+    </div>
+
+    <div class="liste-main shadow-none">
+        <a class="articleTitle" href=""><img class="liste-main" src="./images/levesseaux.jpg" alt="seniorevad"></a>
+        <h2>Seniorevad...
+            <span class="type">Senior</span>
+        </h2>
+        <p>Entièrement destiné aux personnes senior de plus de 50 ans, afin de proposer des loisirs et des voyages
+            dédiés, favorisant notamment la rencontre entre seniors actifs. Nous avo... </p>
+        <div class="display">
+            <p class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> 51 Rue Manin, 75019 Paris, Fra
+            </p>
+        </div>
+        <a href="">
+            <p class="reserver">Plus d'info</p>
+        </a>
+    </div>
+
+
+    <div class="liste-main shadow-none">
+        <a class="articleTitle" href=""><img class="liste-main" src="./images/jardin-du-luxembourg-96401_640.jpg" alt="le girafou"></a>
+        <h2>Le girafou...
+            <span class="type">Enfants</span>
+        </h2>
+        <p>Le Girafou est un parc de jeux d’intérieur pour enfant de 2 à 12. Plein de d&#039;activités vous attende dans
+            le parc, piscine a boule, le manège suspendue, cinéma pour enfants ect... </p>
+        <div class="display">
+            <p class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> Rue du Four, Rouen, Normandie,
+            </p>
+            <span><A class="prix" href="">10 €</a></span>
+        </div>
+        <a href="">
+            <p class="reserver">Plus d'info</p>
+        </a>
+    </div>
+
+
+    <div class="liste-main shadow-none">
+        <a class="articleTitle" href=""><img
+                class="liste-main" src="./images/Randonnee-en-famille-entre-le-barrage-de-Saint-Guerin-et-le-lac-des-Fees-dans-le-Beaufortain-1_default_format4.jpg"
+                alt="FlyView, l&#039;attraction culturelle en réalité virtuelle au cœur de Paris"></a>
+        <h2>Flyview, l&#039;attr...
+            <span class="type">Famille</span>
+        </h2>
+        <p>Venez découvrir Paris a travers un simulateur virtuelle. Vous aurais l&#039;impression de voler dans un
+            jet-pack en plein milieu de paris, avec la technologie de réalité virtuelle.... </p>
+        <div class="display">
+            <p class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> FlyView Paris, Rue du 4 Septem
+            </p>
+            <span><A class="prix" href="">15 €</a></span>
+        </div>
+        <a href="">
+            <p class="reserver">Plus d'info</p>
+        </a>
+    </div>
+
+
+    <div class="liste-main shadow-none">
+        <a class="articleTitle" href=""><img
+                class="liste-main" src="./images/gallery-8.jpg"
+                alt="Parc de jeux d&#039;intérieur"></a>
+        <h2>Parc de jeux d&#039;...
+            <span class="type">Enfants</span>
+        </h2>
+        <p>Le vesseau est un parc de jeux d’intérieur, sur le thème de la science. Afin de faire découvrir la science de
+            manière ludique et amusante aux enfants. Découvrez plus de 10... </p>
+        <div class="display">
+            <p class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> Le Vaisseau, Rue Philippe Doll
+            </p>
+            <span><A class="prix" href="">7 €</a></span>
+        </div>
+        <a href="">
+            <p class="reserver">Plus d'info</p>
+        </a>
+    </div>
+
+
+    <div class="liste-main shadow-none">
+        <a class="articleTitle" href=""><img
+                class="liste-main" src="./images/Randonnee-en-famille-entre-le-barrage-de-Saint-Guerin-et-le-lac-des-Fees-dans-le-Beaufortain-1_default_format2.jpg" alt="Kingooroo"></a>
+        <h2>Kingooroo...
+            <span class="type">Famille</span>
+        </h2>
+        <p>Kingooroo est un parc de jeux d’intérieur pour enfant de 2 ans à 12 ans. Qu&#039;il pleuve ou qu&#039;il
+            neige vos enfants sont a l’abri dans ce parc ou il peuve jouer et ce défouler c... </p>
+        <div class="display">
+            <p class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> 51 Rue de Presles, Aubervillie
+            </p>
+            <span><A class="prix" href="">10 €</a></span>
+        </div>
+        <a href="3">
+            <p class="reserver">Plus d'info</p>
+        </a>
+    </div>
+
+
+    <div class="liste-main shadow-none">
+        <a class="articleTitle" href=""><img
+                class="liste-main" src="./images/gallery-8.jpg"
+                alt="musée d&#039;histoire naturelle"></a>
+        <h2>Musée d&#039;histoir...
+            <span class="type">Famille</span>
+        </h2>
+        <p>Découvrez des animaux plus vrais que nature. Le musée recense plus de 160 000 espèces. En ce moment; Cabinet
+            de Réalité Virtuelle : Voyage au cœur de l&#039;Évolution, Rencontr... </p>
+        <div class="display">
+            <p class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> Grande Galerie de l&#039;Évolution,
+            </p>
+        </div>
+        <a href="">
+            <p class="reserver">Plus d'info</p>
+        </a>
+    </div>
+
+
+    <div class="liste-main shadow-none">
+        <a class="articleTitle" href="">
+            <img class="liste-main" src="./images/gallery-8.jpg" alt="Parc de Belleville"></a>
+        <h2>Parc de bellevi...
+            <span class="type">Famille</span>
+        </h2>
+        <p>Un coup d’œil à ces pelouses un brin escarpées qui plongent vers la skyline suffit pour se convaincre que le
+            parc de Belleville domine l’une des vues les plus spectaculaires de P... </p>
+        <div class="display">
+            <p class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> Parc de Belleville, Rue des Co
+            </p>
+        </div>
+        <a href="">
+            <p class="reserver">Plus d'info</p>
+        </a>
+    </div>
+
+
+    <div class="liste-main shadow-none">
+        <a class="articleTitle" href=""><img class="liste-main" src="./images/gallery-8.jpg"
+                                                                                               alt="Coulée verte"></a>
+        <h2>Coulée verte...
+            <span class="type">Famille</span>
+        </h2>
+        <p>Rien de tel pour se la couler douce que la Coulée verte (ou « Promenade plantée »). Départ en haut du viaduc
+            de l’avenue Daumesnil pour une balade le long des anciennes voies fer... </p>
+        <div class="display">
+            <p class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> Parc de la Coulée Verte, Rue M
+            </p>
+        </div>
+        <a href="">
+            <p class="reserver">Plus d'info</p>
+        </a>
+    </div>
+
+
+    <div class="liste-main shadow-none">
+        <a class="articleTitle" href=""><img class="liste-main" src="./images/gallery-8.jpg" alt="Parc de la Villette"></a>
+        <h2>Parc de la vill...
+            <span class="type">Famille</span>
+        </h2>
+        <p>Le plus grand parc de Paris, et l&#039;un des rares à rester ouvert toute la nuit. Un lieu de passage, de
+            repos et de loisirs, dénué de cloisons... Le spot idéal pour : • Faire ... </p>
+        <div class="display">
+            <p class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> Parc de la Villette, Avenue Je
+            </p>
+        </div>
+        <a href="">
+            <p class="reserver">Plus d'info</p>
+        </a>
+    </div>
+
+
+    <nav aria-label="navigation">
+        <ul class="pager">
+            <li class="previous disabled"><a href="#" title="Précédent" class="suivant">Précédent</a></li>
+            <li class="next"><a href="?page=8&pageSuivant=16#main" class="suivant">Pagesuivante >> </a></li>
+        </ul>
+    </nav>
+
+</div>
+
+
+<div class="liste-resultat">
+
+    <!-- mettre mes sponsor ici -->
+
+</div>
+
+<div class="alert info">
+    <span class="closebtn">ACCEPTER</span> En poursuivant votre navigation, vous acceptez l’utilisation de Cookies pour
+    réaliser des statistiques de visites.
+</div>
+<div id="map"></div>
+
+<script src="js/alert-cookies.js"></script>
+<script src="js/menuIndex.js"></script>
+<script src="js/slide.js"></script>
+<!--
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+<script src="js/ajax.js"></script>
+<script src="js/geocode.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key='VOTRECLEAPI'&libraries=places&callback=initAutocomplete&"
+        async defer></script>
+
+-->
+
+<section id="footer">
+    <div class="texte-footer">
+        <h4>Propulser par <a href="https://www.progfacil.com/" class="white">www.progfacil.com</a></h4>
+    </div>
+
+    <div class="texte-footer">
+        <h2>Suivez nous </h2>
+        <p>
+            <a href="https://www.linkedin.com/in/djamal-lamri-5111a8128/"><i class="fa fa-linkedin fa-moyen white"
+                                                                             title="LinkedIn"></i></a>
+            <a href="https://github.com/pubs1896"><i class="fa fa-github fa-moyen white" title="LinkedIn"></i></a>
+        </p>
+</section>
+
+<div class="scroll-top-wrapper ">
+    <a href="#haut">
+		<span class="scroll-top-inner">
+            <i class="fa fa-2x fa-arrow-circle-up"></i>
+        </span>
+    </a>
+</div>
+<div id="fb-root"></div>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="js/date.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114295896-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-114295896-1');
+
+</script>
+</body>
+<!--
+  .-------.
+  | Dec--.-----.
+  | 80-82| -----\
+  | -----| ----- |
+  '------| -DJ . |
+Progfacil.com----'
+-->
+</html>
