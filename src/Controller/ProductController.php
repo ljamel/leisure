@@ -63,7 +63,7 @@ class ProductController extends AbstractController
      */
     public function template()
     {
-        return $this->render('holidays/index.html.twig');
+        return $this->render('holidaysnew/index.html.twig');
     }
 }
 
