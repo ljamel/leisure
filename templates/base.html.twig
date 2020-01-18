@@ -4,15 +4,48 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, user-scalable=no">
         <meta name="viewport" content="width=500, initial-scale=1">
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block head %}
             <link rel="stylesheet" href="/vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
+            <link rel="stylesheet" href="/vendor/components/font-awesome/css/all.min.css">
             <script src="/vendor/components/jquery/jquery.min.js" ></script>        
-            <script src="/vendor/twbs/bootstrap/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>    
+{#            <script src="/vendor/twbs/bootstrap/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>    #}
         {% endblock %}
     </head>
     <body>
         {% block content %}{% endblock %}
         {% block javascripts %}{% endblock %}
+        <div class="w-100 bg-primary p-5 mt-5 text-white d-flex">
+            <div class="col-xs-12 col-sm-4 col-md-4">
+		<h5>Quick links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="" class="text-white"> >> Accueil </a></li>
+                    <li><a href="" class="text-white"> >> A propos </a></li>
+                    <li><a href="" class="text-white"> >> FAQ </a></li>
+                    <li><a href="" class="text-white"> >> Contact </a></li>
+                </ul>
+            </div>
+            
+            <div class="col-xs-12 col-sm-4 col-md-4">
+		<h5>Quick links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="" class="text-white"> footer </a></li>
+                    <li><a href="" class="text-white"> >> footer </a></li>
+                    <li><a href="" class="text-white"> >> footer </a></li>
+                </ul>
+            </div>
+            
+            <div class="col-xs-12 col-sm-4 col-md-4">
+		<h5>Quick links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="" class="text-white"> >> footer </a></li>
+                    <li><a href="" class="text-white"> >> footer </a></li>
+                    <li><a href="" class="text-white"> >> footer </a></li>
+                </ul>
+            </div>
+
+        </div>
+        <p class="w-100 bg-primary text-center text-white">© 2020 Progfacil.com</P>
     </body>
 </html>

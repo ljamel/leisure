@@ -1,4 +1,7 @@
 {
+    "components/font-awesome": {
+        "version": "5.12.0"
+    },
     "components/jquery": {
         "version": "3.4.1"
     },
