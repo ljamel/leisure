@@ -4,6 +4,9 @@ namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Products;
+use Doctrine\ORM\EntityManagerInterface;
 
 class IndexController extends AbstractController
 {
@@ -14,6 +17,6 @@ class IndexController extends AbstractController
         return $this->render('index.html.twig', [
             'number' => $number,
         ]);
-    }
+    }    
 }
 
