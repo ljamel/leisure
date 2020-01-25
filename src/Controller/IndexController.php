@@ -12,6 +12,13 @@ class IndexController extends AbstractController
 {
     public function index()
     {
+$pizza = "
+    assai
+    suivant
+    ok";
+        $pieces = explode("\n", $pizza);
+        dump($pieces);die("sttoppp");
+        
         $number = random_int(0, 100);
 
         return $this->render('index.html.twig', [

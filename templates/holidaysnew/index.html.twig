@@ -5,25 +5,7 @@
     {{ parent() }}
 {% endblock %}
 {% block content %}
-	<div class="bd-example">
-            
-            <nav class="fixed-top shadow navbar navbar-expand-lg navbar-light bg-light">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                  <a class="navbar-brand" href="#">ACCUEIL</a>
-                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="#"> AJOUTER UNE ACTIVITÉ <span class="sr-only">(current)</span></a>
-                    </li>
-
-                  </ul>
-
-                </div>
-            </nav>
-            
-			<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
 					<ol class="mb-5 carousel-indicators">
 							<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
 							<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
@@ -69,75 +51,37 @@
 						<button type="submit" class="btn btn-primary mb-2 rounded-0 ">Recherche</button>
 					</form>
 			</div>
-	</div>
-
+                        <div id="content" class="mx-auto card-deck col-10 mt-5"></div>
     <div class=" mt-5 mx-auto w-75">
         <h1 class="ml-n4">BON PLANS </h1>
-        <div class="float-right"> Voir tout >> </div>
+        <div class="float-right"><a href="{{ path('activites', {page: 0}) }}"> Voir tout >> </a></div>
     </div>
+        
+                
     <div id="content" class="mx-auto card-deck col-10 mt-5">
-        <div class="card rounded-0 shadow" >
-            <img src="/templates/holidaysnew/images/levesseaux.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title text-primary">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        
+        {% for activity in activitys %}
+            <div class="card rounded-0 shadow" >
+                {% if activity.img != null %}
+                    <img src="{{ activity.img }}" class="card-img-top" alt="{{ activity.title }}">
+                {% else %}
+                    <img src="/templates/holidaysnew/images/No_Image.jpg" class="card-img-top" alt="{{ activity.title }}">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title text-primary">{{ activity.title }}</h5>
+                    <p class="card-text">{{ activity.description }}</p>
+                </div>
+                <div class="card-body">
+                    {% if activity.prices < 1 %}
+                        <button type="button" class="btn btn-success rounded-0">GRATUIT</button>
+                        {% else %}
+                        <button type="button" class="btn btn-success rounded-0">{{ activity.prices }}€</button> 
+                    {% endif %}
+                    <button type="button" class="btn btn-success rounded-0"><a href="{{ activity.link }}" class="text-white">Plus d'infos</a></button>
+                </div>
             </div>
-            <div class="card-body">
-                <button type="button" class="btn btn-success rounded-0">Prix</button>
-                <button type="button" class="btn btn-success rounded-0">Plus d'infos</button>
-            </div>
-        </div>
+        {% endfor %}
 
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-            </ul>
-            <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-            </ul>
-            <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-            </ul>
-            <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
-        </div>
     </div>
 	
 	

@@ -58,12 +58,6 @@ class ProductController extends AbstractController
          return $this->render('product/show.html.twig', ['product' => $product]);
     }
     
-    /**
-     * @Route("/template", name="template")
-     */
-    public function template()
-    {
-        return $this->render('holidaysnew/index.html.twig');
-    }
+
 }
 

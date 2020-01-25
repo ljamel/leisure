@@ -9,11 +9,29 @@
         {% block head %}
             <link rel="stylesheet" href="/vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
             <link rel="stylesheet" href="/vendor/components/font-awesome/css/all.min.css">
-            <script src="/vendor/components/jquery/jquery.min.js" ></script>        
-{#            <script src="/vendor/twbs/bootstrap/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>    #}
+            <script src="/vendor/components/jquery/jquery.min.js" ></script>   
+{#            Commenter pour desactiver le slide et le menu deroulant#}
+            <script src="/vendor/twbs/bootstrap/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>    
         {% endblock %}
     </head>
     <body>
+
+        <nav class="fixed-top shadow navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <a class="navbar-brand" href="#">ACCUEIL</a>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#"> AJOUTER UNE ACTIVITÉ <span class="sr-only">(current)</span></a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </nav>
+        <div class="mb-5 d-inline d-inline-block"></div>
         {% block content %}{% endblock %}
         {% block javascripts %}{% endblock %}
         <div class="w-100 bg-primary p-5 mt-5 text-white d-flex">
