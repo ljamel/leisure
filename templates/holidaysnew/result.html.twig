@@ -30,36 +30,10 @@
                     <button type="button" class="btn btn-success rounded-0"><a href="{{ activity.link }}" class="text-white">Plus d'infos</a></button>
                 </div>
             </div>
+            {#    {{ dump(activity)}}#}
         {% endfor %}
 
     </div>
         
-        
-        {#{{ dump(app.request.attributes.get("page")) }}#}
-    <nav aria-label="Page navigation" class="mt-5 mx-auto w-25">
-        <ul class="pagination">
-          <li class="page-item">
-            <a class="page-link" href="{{ path('activites', {page: app.request.attributes.get("page")-1}) }}" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-              <span class="sr-only">Previous</span>
-            </a>
-          </li>
-
-          {% for i in 0..pagination|round %}
-            {% if app.request.attributes.get("page") == loop.index %}
-                <li class="page-item active"><span class="page-link">{{ loop.index }}</span></li>
-            {% else %}
-                <li class="page-item"><a class="page-link" href="{{ path('activites', {page: loop.index}) }}">{{ loop.index }}</a></li>
-            {% endif %}
-          {% endfor %}
-          
-          <li class="page-item">
-            <a class="page-link" href="{{ path('activites', {page: app.request.attributes.get("page")+1}) }}" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-              <span class="sr-only">Next</span>
-            </a>
-          </li>
-        </ul>
-    </nav>
-	
+        	
 {% endblock %}

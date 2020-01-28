@@ -56,6 +56,27 @@ class Activitys
      */
     private $img;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $latitude;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $longitude;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $postcode;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $iduser;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -156,4 +177,53 @@ class Activitys
 
         return $this;
     }
+
+    public function getLatitude(): ?string
+    {
+        return $this->latitude;
+    }
+
+    public function setLatitude(?string $latitude): self
+    {
+        $this->latitude = $latitude;
+
+        return $this;
+    }
+
+    public function getLongitude(): ?string
+    {
+        return $this->longitude;
+    }
+
+    public function setLongitude(?string $longitude): self
+    {
+        $this->longitude = $longitude;
+
+        return $this;
+    }
+
+    public function getPostcode(): ?int
+    {
+        return $this->postcode;
+    }
+
+    public function setPostcode(?int $postcode): self
+    {
+        $this->postcode = $postcode;
+
+        return $this;
+    }
+
+    public function getIduser(): ?User
+    {
+        return $this->iduser;
+    }
+
+    public function setIduser(?User $iduser): self
+    {
+        $this->iduser = $iduser;
+
+        return $this;
+    }
+
 }

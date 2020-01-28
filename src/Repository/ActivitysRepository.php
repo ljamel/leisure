@@ -22,6 +22,23 @@ class ActivitysRepository extends ServiceEntityRepository
     // /**
     //  * @return Activitys[] Returns an array of Activitys objects
     //  */
+    public function findByResult($value, $price)
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.Title LIKE :val')
+            ->andWhere('a.Prices < :price')
+            ->setParameter('val', '%'.$value.'%')
+            ->setParameter('price', $price)
+            ->orderBy('a.id', 'DESC')
+            ->setMaxResults(50)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+    
+    // /**
+    //  * @return Activitys[] Returns an array of Activitys objects
+    //  */
     /*
     public function findByExampleField($value)
     {

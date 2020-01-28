@@ -43,10 +43,12 @@
 							<span class="carousel-control-next-icon" aria-hidden="true"></span>
 							<span class="sr-only">Next</span>
 					</a>
-					<form class="mb-n5 p-3 form-inline chearch carousel-indicators align-top bg-light shadow">
+					<form method="post" action="/activite-trouver" class="mb-n5 p-3 form-inline chearch carousel-indicators align-top bg-light shadow">
                                                 <div class="form-group mx-sm-3 mb-2">
                                                     <label for="inputcity" class="sr-only">Ville</label>
-                                                    <i class="fas fa-map-marker-alt mr-n3 position-relative"></i></i><input type="text" class="form-control rounded-0 border-0" id="inputPassword2" placeholder=" Choisir une ville">
+                                                    <i class="fas fa-map-marker-alt mr-n3 position-relative"></i></i><input name="city" type="text" class="form-control rounded-0 border-1 mr-3" placeholder="&nbsp; Choisir une ville">
+                                                    <label for="inputcity" class="sr-only">Budget</label>
+                                                    <i class="fas fa-euro-sign mr-n3 position-relative"></i></i><input name="price" type="number" class="form-control rounded-0 border-1" placeholder="&nbsp; Votre budget ex: 20€">
                                                 </div>
 						<button type="submit" class="btn btn-primary mb-2 rounded-0 ">Recherche</button>
 					</form>
@@ -54,7 +56,7 @@
                         <div id="content" class="mx-auto card-deck col-10 mt-5"></div>
     <div class=" mt-5 mx-auto w-75">
         <h1 class="ml-n4">BON PLANS </h1>
-        <div class="float-right"><a href="{{ path('activites', {page: 0}) }}"> Voir tout >> </a></div>
+        <div class="float-right"><a href="{{ path('activites', {page: 0}) }}"> Voir tout <span aria-hidden="true">&raquo;</span> </a></div>
     </div>
         
                 
@@ -72,9 +74,7 @@
                     <p class="card-text">{{ activity.description }}</p>
                 </div>
                 <div class="card-body">
-                    {% if activity.prices < 1 %}
-                        <button type="button" class="btn btn-success rounded-0">GRATUIT</button>
-                        {% else %}
+                    {% if activity.prices > 1 %}
                         <button type="button" class="btn btn-success rounded-0">{{ activity.prices }}€</button> 
                     {% endif %}
                     <button type="button" class="btn btn-success rounded-0"><a href="{{ activity.link }}" class="text-white">Plus d'infos</a></button>
