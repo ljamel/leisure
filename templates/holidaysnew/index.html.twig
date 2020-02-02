@@ -14,8 +14,8 @@
 							<div class="carousel-item active">
 									<img src="/templates/holidaysnew/images/bateau.jpg" class="d-block w-100" alt="bateau">
 									<div class="mb-5 carousel-caption d-none d-md-block">
-											<h1 class="h3">Vous cherchez une idée loisir</h1>
-											<span class="h4">Vous êtes au bon endroit. Mise à jour régulière des sorties et événement. Avec la géolocalisation vous trouverez des activités prêt de chez vous.</span>
+											<h1 class="h3">Idées loisirs</h1>
+											<span class="h4">Mise à jour régulière des sorties et événement. Avec la géolocalisation vous trouverez des activités prêt de chez vous.</span>
 									</div>
 							</div>
 							<div class="carousel-item">
@@ -47,7 +47,7 @@
 			</div>
                         <div id="content" class="mx-auto card-deck col-10 mt-5"></div>
     <div class=" mt-5 mx-auto w-75">
-        <span class="ml-n4 h2">BON PLANS </span>
+        <span class="ml-n4 h2"><h2>BON PLANS ACTIVITÉS DE LOISIRS</h2></span>
         <div class="float-right"><a href="{{ path('activites', {page: 0}) }}"> Voir tout <span aria-hidden="true">&raquo;</span> </a></div>
     </div>
         
@@ -62,7 +62,7 @@
                     <img src="/templates/holidaysnew/images/No_Image.jpg" class="card-img-top" alt="{{ activity.title }}">
                 {% endif %}
                 <div class="card-body">
-                    <h2 class="card-title text-primary">{{ activity.title }}</h2>
+                    <h3 class="card-title text-primary">{{ activity.title }}</h3>
                     <p class="card-text">{{ activity.description }}</p>
                 </div>
                 <div class="card-body">
