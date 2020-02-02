@@ -10,28 +10,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ActivitysController extends AbstractController
 {
-    /**
-     * @Route("/activitys", name="activitys")
-     */
-    public function index()
-    {
-        return $this->render('activitys/index.html.twig', [
-            'controller_name' => 'ActivitysController',
-        ]);
-    }
-    
-    /**
-     * @Route("/template", name="template")
-     */
-    public function template()
-    {
-        $repo = $this->getDoctrine()->getRepository(\App\Entity\Activitys::class);
-        
-        // use for pagination
-        $activitys = $repo->findBy(array(), array('id' => 'desc'), 3, null);
-//dump($activitys);die("stopppp");
-        return $this->render('holidaysnew/index.html.twig', ['activitys' => $activitys]);
-    }
     
     /**
      * @Route("/activites/{page}", name="activites")
@@ -52,7 +30,7 @@ class ActivitysController extends AbstractController
     }
     
     /**
-     * @Route("/activite-trouver", name="activites")
+     * @Route("/activite-trouver", name="chearch")
      */
     public function result(Request $request)
     {

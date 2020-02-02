@@ -10,21 +10,19 @@ use Doctrine\ORM\EntityManagerInterface;
 
 class IndexController extends AbstractController
 {
-    public function index()
+    /**
+     * @Route("/", name="home")
+     */
+    public function home()
     {
-$pizza = "
-    assai
-    suivant
-    ok";
-        $pieces = explode("\n", $pizza);
-        dump($pieces);die("sttoppp");
+        $repo = $this->getDoctrine()->getRepository(\App\Entity\Activitys::class);
         
-        $number = random_int(0, 100);
-
-        return $this->render('index.html.twig', [
-            'number' => $number,
-        ]);
-    }  
+        // use for pagination
+        $activitys = $repo->findBy(array(), array('id' => 'desc'), 3, null);
+        
+//dump($activitys);die("stopppp");
+        return $this->render('holidaysnew/index.html.twig', ['activitys' => $activitys]);
+    }
     
     
 }

@@ -25,7 +25,7 @@ class ActivitysRepository extends ServiceEntityRepository
     public function findByResult($value, $price)
     {
         return $this->createQueryBuilder('a')
-            ->andWhere('a.Title LIKE :val')
+            ->andWhere('a.Ville LIKE :val')
             ->andWhere('a.Prices < :price')
             ->setParameter('val', '%'.$value.'%')
             ->setParameter('price', $price)

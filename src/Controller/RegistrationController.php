@@ -33,7 +33,7 @@ class RegistrationController extends AbstractController
                 )
             );
             
-            $user->setEmail($form->get('email')->getData());
+            $user->setEmail("aucun");
             $user->setRoles($user->getRoles());
 
             $entityManager = $this->getDoctrine()->getManager();

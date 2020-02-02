@@ -9,28 +9,20 @@
 					<ol class="mb-5 carousel-indicators">
 							<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
 							<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-							<li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
 					</ol>
-					<div class="carousel-inner">
+					<div class="carousel-inner mt-n3">
 							<div class="carousel-item active">
-									<img src="/templates/holidaysnew/images/bateau.jpg" class="d-block w-100" alt="...">
+									<img src="/templates/holidaysnew/images/bateau.jpg" class="d-block w-100" alt="bateau">
 									<div class="mb-5 carousel-caption d-none d-md-block">
-											<h5>Vous cherchez une idée loisir</h5>
-											<p>Vous êtes au bon endroit. Mise à jour régulière des sorties et événement. Avec la géolocalisation vous trouverez des activités prêt de chez vous.</p>
+											<h4>Vous cherchez une idée loisir</h4>
+											<h5>Vous êtes au bon endroit. Mise à jour régulière des sorties et événement. Avec la géolocalisation vous trouverez des activités prêt de chez vous.</h5>
 									</div>
 							</div>
 							<div class="carousel-item">
-									<img src="/templates/holidaysnew/images/panorama-vert.jpg" class="d-block w-100" alt="...">
+									<img src="/templates/holidaysnew/images/panorama-vert.jpg" class="d-block w-100" alt="jardin">
 									<div class="mb-5 carousel-caption d-none d-md-block">
-											<h5>Divertissement pour toutes la famille</h5>
-											<p>Découvrais les loisirs, lieux touristiques et séjours. Une liste de suggestions de loisirs et vacances via le lien ci-dessous. Quel que soit votre budget vous trouverez forcément une activité pour vous.</p>
-									</div>
-							</div>
-							<div class="carousel-item">
-									<img src="/templates/holidaysnew/images/port-3.jpg" class="d-block w-100" alt="...">
-									<div class="mb-5 carousel-caption d-none d-md-block">
-											<h5>Third slide label</h5>
-											<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+											<h4>Divertissement pour toutes la famille</h4>
+											<h5>Découvrais les loisirs, lieux touristiques et séjours. Une liste de suggestions de loisirs et vacances via le lien ci-dessous. Quel que soit votre budget vous trouverez forcément une activité pour vous.</h5>
 									</div>
 							</div>
 					</div>
@@ -43,7 +35,7 @@
 							<span class="carousel-control-next-icon" aria-hidden="true"></span>
 							<span class="sr-only">Next</span>
 					</a>
-					<form method="post" action="/activite-trouver" class="mb-n5 p-3 form-inline chearch carousel-indicators align-top bg-light shadow">
+					<form method="post" action="{{ path('chearch') }}" class="mb-n5 p-3 form-inline chearch carousel-indicators align-top bg-light shadow">
                                                 <div class="form-group mx-sm-3 mb-2">
                                                     <label for="inputcity" class="sr-only">Ville</label>
                                                     <i class="fas fa-map-marker-alt mr-n3 position-relative"></i></i><input name="city" type="text" class="form-control rounded-0 border-1 mr-3" placeholder="&nbsp; Choisir une ville">
