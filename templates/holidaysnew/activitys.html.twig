@@ -7,7 +7,7 @@
 {% block content %}
 
     <div class=" mt-5 mx-auto w-75">
-        <h1 class="ml-n2">Toutes les activités </h1>
+        <h1 class="ml-n2">Toutes les activités de loisirs</h1>
     </div>
         
     <div id="content" class="mx-auto card-deck col-10 mt-5 d-flex">
@@ -20,7 +20,7 @@
                     <img src="/templates/holidaysnew/images/No_Image.jpg" class="card-img-top" alt="{{ activity.title }}">
                 {% endif %}
                 <div class="card-body">
-                    <h5 class="card-title text-primary">{{ activity.title }} {{ activity.id }}</h5>
+                    <h2 class="card-title text-primary">{{ activity.title }}</h2>
                     <p class="card-text">{{ activity.description }}</p>
                 </div>
                 <div class="card-body">

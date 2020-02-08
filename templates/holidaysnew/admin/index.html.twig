@@ -10,8 +10,15 @@
     <div class="col-md-6 offset-md-3">
         {{ form_start(activityForm) }}
         <div class="my-custom-class-for-errors">{{ form_errors(activityForm) }}</div>
+                
+        <select name="category" multiple class=form-control>
+        {% for category in categorys %}
+            <option value={{ loop.index }}>{{ category }}</option>
+        {% endfor  %}
+        </select>
         {{ form_rest(activityForm) }}
-            <button class="btn btn-primary">Envoyer</button>
+
+        <button class="btn btn-primary">Envoyer</button>
         {{ form_end(activityForm) }}
     </div>
 	

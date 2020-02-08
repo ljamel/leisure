@@ -89,9 +89,15 @@ class Activitys
      */
     private $publish;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Categorys", inversedBy="activitys")
+     */
+    private $categorys;
+
     public function __construct()
     {
         $this->images = new ArrayCollection();
+        $this->categorys = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -279,6 +285,32 @@ class Activitys
     public function setPublish(bool $publish): self
     {
         $this->publish = $publish;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Categorys[]
+     */
+    public function getCategorys(): Collection
+    {
+        return $this->categorys;
+    }
+
+    public function addCategory(Categorys $category): self
+    {
+        if (!$this->categorys->contains($category)) {
+            $this->categorys[] = $category;
+        }
+
+        return $this;
+    }
+
+    public function removeCategory(Categorys $category): self
+    {
+        if ($this->categorys->contains($category)) {
+            $this->categorys->removeElement($category);
+        }
 
         return $this;
     }

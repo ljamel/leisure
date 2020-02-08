@@ -22,11 +22,12 @@ class ActivitysRepository extends ServiceEntityRepository
     // /**
     //  * @return Activitys[] Returns an array of Activitys objects
     //  */
-    public function findByResult($value, $price)
+    public function findByResult($value, $price=1)
     {
+//        dump($price);die("stooop");
         return $this->createQueryBuilder('a')
             ->andWhere('a.Ville LIKE :val')
-            ->andWhere('a.Prices < :price')
+            ->andWhere('a.Prices <= :price')
             ->setParameter('val', '%'.$value.'%')
             ->setParameter('price', $price)
             ->orderBy('a.id', 'DESC')

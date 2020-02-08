@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Activitys;
+use App\Entity\Categorys;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -11,15 +12,17 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+
 
 class ActivityFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $user = new \App\Entity\User();
+
         $builder
             ->add('title')
-            ->add('description')
+            ->add('description', null, ['attr' => ['minlength' => 250]])
             ->add('link')
             ->add('prices')
             ->add('address') 
