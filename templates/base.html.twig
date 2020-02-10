@@ -14,37 +14,36 @@
     </head>
     <body>
 
-        <nav class="fixed-top shadow navbar navbar-expand-lg navbar-light bg-primary">
-            <button class="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="fixed-top navbar navbar-expand-lg ">
+            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
-                <ul class="navbar-nav mr-auto mt-n1 mt-lg mb-n3">
+                <ul class="font-weight-bold navbar-nav mr-auto mt-n1 mt-lg mb-n2">
                     <li class="nav-item active">
-                      <a class="nav-link text-white h5" href="/">ACCUEIL <span class="sr-only">(current)</span></a>
+                      <a class="nav-link text-dark" href="/">ACCUEIL <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link text-white" href="/">IDÉES LOISIRS <span class="sr-only">(current)</span></a>
+                        <a class="nav-link text-dark" href="/">IDÉES LOISIRS <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link text-white" href="/">SPORT <span class="sr-only">(current)</span></a>
+                        <a class="nav-link text-dark" href="/">SPORT <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                      <a class="nav-link text-white" href="/">JEUX <span class="sr-only">(current)</span></a>
+                      <a class="nav-link text-dark" href="/">JEUX <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                      <a class="nav-link text-white" href="/">NATURE <span class="sr-only">(current)</span></a>
+                      <a class="nav-link text-dark" href="/">NATURE <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                      <a class="nav-link text-white" href="{{ path('app_register') }}"> AJOUTER UNE ACTIVITÉ LOISIRS <span class="sr-only">(current)</span></a>
+                      <a class="nav-link text-dark" href="{{ path('app_register') }}"> AJOUTER UNE ACTIVITÉ LOISIRS <span class="sr-only">(current)</span></a>
                     </li>
 
                 </ul>
 
             </div>
         </nav>
-        <div class="mb-5 d-inline d-inline-block"></div>
         {% block content %}{% endblock %}
         {% block javascripts %}{% endblock %}
         <div class="w-100 bg-primary p-5 mt-5 text-white d-flex position-relative pb-0">
@@ -79,6 +78,6 @@
         <p class="w-100 bg-primary text-center text-white position-relative pb-0">© 2020 Progfacil.com</P>
         <script src="/vendor/components/jquery/jquery.slim.min.js" ></script>   
 {#      Commenter pour desactiver le slide et le menu deroulant#}
-        <script src="/vendor/twbs/bootstrap/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>    
+{#        <script src="/vendor/twbs/bootstrap/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>    #}
     </body>
 </html>
