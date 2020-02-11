@@ -5,7 +5,7 @@
     {{ parent() }}
 {% endblock %}
 {% block content %}
-                        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel"  data-interval="9000">
+                        <div id="carouselExampleCaptions" class="carousel slide mt-n5" data-ride="carousel"  data-interval="20000">
 					<ol class="mb-5 carousel-indicators">
 							<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
 							<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
@@ -42,13 +42,12 @@
                                                     <label for="inputprice" class="sr-only">Budget</label>
                                                     <i class="fas fa-euro-sign mr-n3 position-relative opacity-5"></i></i><input name="price" type="number" class="pl-4 w-25 form-control rounded-0 border-1" placeholder="Budget">
                                                 </div>
-						<button type="submit" class="btn btn-primary mb-2 rounded-0 ">Recherche</button>
+						<button type="submit" class="btn btn-rose mb-2 rounded-0 ">Recherche</button>
 					</form>
 			</div>
-                        <div id="content" class="mx-auto card-deck col-10 mt-5"></div>
-    <div class=" mt-5 mx-auto w-75">
+    <div class="mx-auto w-75">
         <span class="ml-n4 h2"><h2>BON PLANS ACTIVITÉS DE LOISIRS</h2></span>
-        <div class="float-right"><a href="{{ path('activites', {page: 0}) }}"> Voir tout <span aria-hidden="true">&raquo;</span> </a></div>
+        <div class="float-right"><a href="{{ path('activites', {page: 0}) }}" class="btn-rose p-1"> Voir tout <span aria-hidden="true">&raquo;</span> </a></div>
     </div>
         
                 
@@ -63,7 +62,7 @@
                     <img src="/templates/holidaysnew/images/No_Image.jpg" class="card-img-top" alt="{{ activity.title }}">
                 {% endif %}
                 <div class="card-body">
-                    <h3 class="card-title text-primary">{{ activity.title }}</h3>
+                    <h3 class="card-title">{{ activity.title }}</h3>
                     <p class="card-text">{{ activity.description }}</p>
                     {% for cat in activity.getCategorys() %}
                         Categorie {{ cat.name }}
@@ -71,9 +70,9 @@
                 </div>
                 <div class="card-body">
                     {% if activity.prices > 1 %}
-                        <button type="button" class="btn btn-success rounded-0">{{ activity.prices }} €</button> 
+                        <button type="button" class="btn btn-rose rounded-0">{{ activity.prices }} €</button> 
                     {% endif %}
-                    <button type="button" class="btn btn-success rounded-0"><a href="{{ activity.link }}" class="text-white">Plus d'infos</a></button>
+                    <button type="button" class="btn btn-rose rounded-0"><a href="{{ activity.link }}" class="text-white">Plus d'infos</a></button>
                 </div>
             </div>
         {% endfor %}
