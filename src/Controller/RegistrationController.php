@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Controller;
-
+/* 
+ * Djamal LAMRI 16/08/1984.
+ */
 use App\Entity\User;
 use App\Form\RegistrationFormType;
 use App\Security\LoginFormAuthenticator;
