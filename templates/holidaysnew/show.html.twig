@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+
+    <div class=" mt-5 mx-auto w-75">
+        <h1 class="ml-n2">Details</h1>
+    </div>
+    
+    {{ dump(activity) }}
+   
+	
+{% endblock %}

@@ -3,7 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/var/www/cadito/src/Controller/ProductController.php</file>
+            <file>file:/var/www/cadito/src/Controller/RegistrationController.php</file>
+            <file>file:/var/www/cadito/src/Command/CategorisedCommand.php</file>
+            <file>file:/var/www/cadito/templates/holidaysnew/css/style.css</file>
+            <file>file:/var/www/cadito/src/Controller/IndexController.php</file>
+            <file>file:/var/www/cadito/templates/holidaysnew/index.html.twig</file>
+            <file>file:/var/www/cadito/src/Controller/ActivitysController.php</file>
+            <file>file:/var/www/cadito/src/Controller/SecurityController.php</file>
             <file>file:/var/www/cadito/templates/base.html.twig</file>
+            <file>file:/var/www/cadito/src/Controller/AdminController.php</file>
         </group>
     </open-files>
 </project-private>
