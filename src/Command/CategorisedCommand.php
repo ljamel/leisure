@@ -85,7 +85,6 @@ class CategorisedCommand extends Command
 
         }
         
-        
         $this->em->persist($cat);
         $this->em->flush();
 
