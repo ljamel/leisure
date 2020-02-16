@@ -1,0 +1,5 @@
+UPDATE `images` SET `category` = 'e', `img` = 'e' WHERE `images`.`id` = 11;
+UPDATE `images` SET `img` = 'jardin' WHERE `images`.`id` = 1;
+INSERT INTO `images` (`id`, `img`) VALUES (NULL, 'bateau');
+
+// Modifier id de l'imale e par 9999

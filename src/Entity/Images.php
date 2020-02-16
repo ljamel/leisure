@@ -21,11 +21,6 @@ class Images
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $category;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
     private $img;
 
     /**
@@ -41,18 +36,6 @@ class Images
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getCategory(): ?string
-    {
-        return $this->category;
-    }
-
-    public function setCategory(?string $category): self
-    {
-        $this->category = $category;
-
-        return $this;
     }
 
     public function getImg(): ?string

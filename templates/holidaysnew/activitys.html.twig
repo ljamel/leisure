@@ -13,11 +13,18 @@
     <div id="content" class="mx-auto card-deck col-10 mt-5 d-flex">
         
         {% for activity in activitys %}
+
             <div class="card rounded-0 shadow mw-300 m-3" >
+                
+{#                Pour afficher des images#}
                 {% if activity.img != null %}
                     <img src="{{ activity.img }}" class="card-img-top" alt="{{ activity.title }}">
                 {% else %}
-                    <img src="/templates/holidaysnew/images/No_Image.jpg" class="card-img-top" alt="{{ activity.title }}">
+                    {% for catimg in activity.getImages() %}
+                        {% if loop.first %}
+                            <img src="/templates/holidaysnew/images/default-img/{{ catimg.img }}.jpg" class="card-img-top" alt="{{ activity.title }}">         
+                        {% endif %}
+                    {% endfor %}     
                 {% endif %}
                 <div class="card-body">
                     <h2 class="card-title text-primary">{{ activity.title }}</h2>

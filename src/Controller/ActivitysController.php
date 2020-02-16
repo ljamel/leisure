@@ -44,4 +44,17 @@ class ActivitysController extends AbstractController
         return $this->render('holidaysnew/result.html.twig',[ 
                 'activitys' => $activitys]); 
     }
+    
+    /**
+     * @Route("/show_activiter/{title}", name="show")
+     */
+    public function show($title){
+        
+        $repo = $this->getDoctrine()->getRepository(\App\Entity\Activitys::class);
+        $result = $repo->findOneBy(['Title' =>$title]);
+        
+        
+        return $this->render('holidaysnew/show.html.twig',[
+                'activity' => $result]);
+    }
 }
