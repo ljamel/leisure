@@ -1,0 +1,24 @@
+        {% for activity in activitys %}
+            <div class="card rounded-0 shadow mw-300 m-3" >              
+{#                Pour afficher des images#}
+                {% if activity.img != null %}
+                    <img src="{{ activity.img }}" class="card-img-top" alt="{{ activity.title }}">
+                {% else %}
+                    {% for catimg in activity.getImages() %}
+                        {% if loop.first %}
+                            <img src="/templates/holidaysnew/images/default-img/{{ catimg.img }}.jpg" class="card-img-top" alt="{{ activity.title }}">         
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+                <div class="card-body">
+                    <h2 class="card-title text-primary">{{ activity.title }}</h2>
+                    <p class="card-text">{{ activity.description }}</p>
+                </div>
+                <div class="card-body">
+                    {% if activity.prices > 1 %}
+                        <button type="button" class="btn btn-rose rounded-0">{{ activity.prices }} €</button> 
+                    {% endif %}
+                    <button type="button" class="btn btn-rose rounded-0"><a href="{{ path('category', {title: activity.title}) }}" class="text-white">Plus d'infos</a></button>
+                </div>
+            </div>
+        {% endfor %}

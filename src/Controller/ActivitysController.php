@@ -57,4 +57,18 @@ class ActivitysController extends AbstractController
         return $this->render('holidaysnew/show.html.twig',[
                 'activity' => $result]);
     }
+    
+    /**
+     * @Route("/activiter/{title}", name="category")
+     */
+    public function category($title){
+        
+        $repo = $this->getDoctrine()->getRepository(\App\Entity\Activitys::class);
+        
+        // utiliser like <<<------
+        $result = $repo->findByCat($title);
+        
+        return $this->render('holidaysnew/show.html.twig',[
+                'activitys' => $result]);
+    }
 }
