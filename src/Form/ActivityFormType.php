@@ -23,11 +23,9 @@ class ActivityFormType extends AbstractType
         $builder
             ->add('title')
             ->add('description', null, ['attr' => ['minlength' => 250]])
-            ->add('link')
             ->add('prices')
             ->add('address') 
             ->add('ville') 
-            ->add('img')
             ->add('postcode')
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,

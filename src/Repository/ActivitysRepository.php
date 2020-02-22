@@ -37,6 +37,19 @@ class ActivitysRepository extends ServiceEntityRepository
         ;
     }
     
+    public function findByPostCode($city)
+    {
+        if(!$city)$city="paris";
+        return $this->createQueryBuilder('a')
+            ->Where('a.postcode LIKE :val')
+            ->setParameter('val', $city.'%')
+            ->orderBy('a.id', 'DESC')
+            ->setMaxResults(50)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+    
     public function findByCat($cat)
     {
         if(!$cat)$cat="sport";

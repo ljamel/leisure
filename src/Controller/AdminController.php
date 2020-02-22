@@ -15,17 +15,18 @@ use App\Form\ActivityFormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use App\Entity\Categorys;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class AdminController extends AbstractController
 {
     /**
      * @Route("/admin", name="admin")
-     * @Security("is_granted('ROLE_ADMIN') ")
+     * @Security("is_granted('ROLE_USER') ")
      */
     public function addActivity(Request $request)
     {
         $repo = $this->getDoctrine()->getRepository(\App\Entity\Activitys::class);
-        
+
         $activitys = new \App\Entity\Activitys();
         $cats = $this->getDoctrine()->getRepository(\App\Entity\Categorys::class);
         $form = $this->createForm(ActivityFormType::class, $activitys);
@@ -54,8 +55,9 @@ class AdminController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($activitys);
             $entityManager->flush();
-
-
+            $this->addFlash('success', 'Merci pour votre contribution');
+            
+            return $this->redirectToRoute('home');            
         }
 
 //dump($activitys);die("stopppp");
