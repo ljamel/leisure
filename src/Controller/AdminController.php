@@ -20,7 +20,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 class AdminController extends AbstractController
 {
     /**
-     * @Route("/admin", name="admin")
+     * @Route("/addactivity", name="addactivity")
      * @Security("is_granted('ROLE_USER') ")
      */
     public function addActivity(Request $request)

@@ -71,6 +71,12 @@ class CategorisedCommand extends Command
             '',
         ]);
 
+        for($i=0; $i < 1255; $i++){
+            
+            echo '=B'.$i.' & " " & D'.$i.' <br/>';
+//            dump($var);
+        }
+        dd("stop");
         $catsImg = $this->getImages()->findAll();
 
         // relie l'image correspondant à l'activité

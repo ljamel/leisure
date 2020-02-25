@@ -35,7 +35,6 @@ class RegistrationController extends AbstractController
                 )
             );
             
-            $user->setEmail("aucun");
             $user->setRoles($user->getRoles());
 
             $entityManager = $this->getDoctrine()->getManager();
@@ -43,13 +42,8 @@ class RegistrationController extends AbstractController
             $entityManager->flush();
 
             // do anything else you need here, like send an email
-
-            return $guardHandler->authenticateUserAndHandleSuccess(
-                $user,
-                $request,
-                $authenticator,
-                'main' // firewall name in security.yaml
-            );
+            $this->addFlash('success', 'Votre inscription a bien été enregistrée. Vous-pouvez maintenant vous connecter');
+            return $this->redirectToRoute('addactivity'); 
         }
 
         return $this->render('registration/register.html.twig', [
