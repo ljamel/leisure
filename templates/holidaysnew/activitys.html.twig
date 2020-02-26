@@ -11,12 +11,14 @@
     </div>
         
     <div id="content" class="mx-auto card-deck col-10 mt-5 d-flex">
-        {% include "holidaysnew/_card.html.twig" %}
+        {% for activity in activitys %}
+            {% include "holidaysnew/_card.html.twig" %}
+        {% endfor %}
     </div>
         
         
         {#{{ dump(app.request.attributes.get("page")) }}#}
-    <nav aria-label="Page navigation" class="mt-5 mx-auto w-25">
+    <nav aria-label="Page navigation" class="">
         <ul class="pagination">
           <li class="page-item">
             <a class="page-link" href="{{ path('activites', {page: app.request.attributes.get("page")-1}) }}" aria-label="Previous">

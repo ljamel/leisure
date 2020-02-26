@@ -1,4 +1,4 @@
-        {% for activity in activitys %}
+
             <div class="card rounded-0 shadow mw-300 m-3" >              
 {#                Pour afficher des images#}
                 {% if activity.img != null %}
@@ -18,7 +18,7 @@
                     {% if activity.prices > 1 %}
                         <button type="button" class="btn btn-rose rounded-0">{{ activity.prices }} €</button> 
                     {% endif %}
-                    <button type="button" class="btn btn-rose rounded-0"><a href="{{ path('category', {title: activity.title}) }}" class="text-white">Plus d'infos</a></button>
+                    <span type="button" class="btn btn-rose rounded-0"><a href="{{ path('show', {title: activity.title}) }}" class="text-white">Plus d'infos</a></span>
                 </div>
             </div>
-        {% endfor %}
+

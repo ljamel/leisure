@@ -52,16 +52,28 @@ class ActivitysRepository extends ServiceEntityRepository
     
     public function findByCat($cat)
     {
+        $cats = explode(" ", $cat);
+//        dd($cats);
         if(!$cat)$cat="sport";
-        return $this->createQueryBuilder('a')
-            ->Where('a.Title LIKE :val')
-            ->orWhere('a.Description LIKE :val')
-            ->setParameter('val', '%'.$cat.'%')
-            ->orderBy('a.id', 'DESC')
-            ->setMaxResults(50)
-            ->getQuery()
-            ->getResult()
-        ;
+        $result = array();
+        foreach($cats as $key => $cat ){
+            $result[] = $this->createQueryBuilder('a')
+                ->Where('a.Title LIKE :val')
+                ->orWhere('a.Description LIKE :val')
+                ->setParameter('val', '%'.$cat.'%')
+                ->orderBy('a.id', 'DESC')
+                ->setMaxResults(50)
+                ->getQuery()
+                ->getResult()
+            ;
+            
+            if(count($result[$key]) === 0){
+                unset($result[$key]);
+            }
+        }
+        
+        return $result;
+        
     }
     
     // /**

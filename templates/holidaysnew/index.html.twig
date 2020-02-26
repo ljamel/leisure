@@ -50,8 +50,9 @@
     </div>
                 
     <div id="content" class="mx-auto card-deck col-10 mt-1">
-        
-    {% include "holidaysnew/_card.html.twig" %}
+        {% for activity in activitys %}
+            {% include "holidaysnew/_card.html.twig" %}
+        {% endfor %}
 
     </div>
     <a href="{{ path('activites', {page: 0}) }}"> Voir tout <span aria-hidden="true">&raquo;</span> </a>

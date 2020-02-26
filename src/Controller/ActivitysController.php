@@ -21,11 +21,11 @@ class ActivitysController extends AbstractController
         $repo = $this->getDoctrine()->getRepository(\App\Entity\Activitys::class);
         
         // use for pagination
-        if($page > 1)$page +=11;
+        if($page > 1)$page *=11+1;
         $activitys = $repo->findBy(array(), array('id' => 'desc'), 12, $page);
         
         $paginations = $repo->findAll();
-        $nbbypage = count($paginations) / 24;
+        $nbbypage = count($paginations) / 14;
 //dump($activitys);die("stopppp");
         return $this->render('holidaysnew/activitys.html.twig',[ 
                 'activitys' => $activitys, 'pagination' => $nbbypage]);
@@ -72,7 +72,9 @@ class ActivitysController extends AbstractController
         // utiliser like <<<------
         $result = $repo->findByCat($title);
         
-        return $this->render('holidaysnew/show.html.twig',[
+        return $this->render('holidaysnew/cat.html.twig',[
                 'activitys' => $result]);
     }
+    
+
 }
