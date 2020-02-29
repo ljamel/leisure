@@ -79,6 +79,18 @@ class ActivitysRepository extends ServiceEntityRepository
         
     }
     
+    public function nbActivitys()
+    {
+        return $this->createQueryBuilder('a')
+               ->Where('a.publish = :val')
+               ->setParameter('val', 1)
+               ->select('count(a.Title)')
+               ->setMaxResults(1)
+               ->getQuery()
+               ->getResult()
+            ;
+    }
+    
     // /**
     //  * @return Activitys[] Returns an array of Activitys objects
     //  */

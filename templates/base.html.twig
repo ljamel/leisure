@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}{% endblock %}</title>
         {% block head %}
             <link rel="stylesheet" href="/vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
             <link rel="stylesheet" href="/vendor/components/font-awesome/css/all.min.css">
@@ -49,7 +49,7 @@
                           CULTURE
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="{{ path('category', {'title': 'muse'}) }}">MUSÉE</a>
+                          <a class="dropdown-item" href="{{ path('category', {'title': 'musee'}) }}">MUSÉE</a>
                           <a class="dropdown-item" href="{{ path('category', {'title': 'biblioth'}) }}">BIBLIOTHÈQUE</a>
                           <a class="dropdown-item" href="{{ path('category', {'title': 'théatre'}) }}">THÉATRE</a>
                           <a class="dropdown-item" href="{{ path('category', {'title': 'spectacle'}) }}">SPECTACLE</a>

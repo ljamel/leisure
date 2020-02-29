@@ -69,7 +69,7 @@ class ActivitysController extends AbstractController
         $result = $repo->findByCat($title);
         
         return $this->render('holidaysnew/cat.html.twig',[
-                'activitys' => $result]);
+                'activitys' => $result, 'title' => $title]);
     }
     
 

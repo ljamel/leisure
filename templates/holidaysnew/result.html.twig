@@ -1,6 +1,6 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Index{% endblock %}
+{% block title %}{{ app.request.pathinfo|trim('/activiter/') }}{% endblock %}
 {% block head %}
     {{ parent() }}
 {% endblock %}

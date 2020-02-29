@@ -1,6 +1,6 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Index{% endblock %}
+{% block title %}{{ title }}{% endblock %}
 {% block head %}
     {{ parent() }}
 {% endblock %}
@@ -10,14 +10,11 @@
         <h1 class="ml-n2">Liste des loisirs</h1>
     </div>
 
-    
     {% for activitie in activitys %}
         <div id="content" class="mx-auto card-deck col-10 mt-5 d-flex">
             {% for activity in activitie %}
-        
-                        {% include "holidaysnew/_card.html.twig" %}
-
-                {% endfor %}    
-            {% endfor %}
+                {% include "holidaysnew/_card.html.twig" %}
+            {% endfor %}         
         </div>
+    {% endfor %}
 {% endblock %}
