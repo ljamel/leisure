@@ -22,7 +22,7 @@ class ActivitysController extends AbstractController
         
         // use for pagination
         if($page > 1)$page *=11+1;
-        $activitys = $repo->findBy(array(), array('id' => 'desc'), 12, $page);
+        $activitys = $repo->findByPage(array(), array('id' => 'desc'), 12, $page);
         
         $paginations = $repo->findAll();
         $nbbypage = count($paginations) / 14;

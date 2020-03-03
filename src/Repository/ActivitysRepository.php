@@ -40,6 +40,16 @@ class ActivitysRepository extends ServiceEntityRepository
         ;
     }
     
+    public function findByPage($arr, $order, $limit, $page){
+        return $this->createQueryBuilder('a')
+            ->orderBy('a.id', 'DESC')
+            ->setFirstResult($page)
+            ->setMaxResults($limit)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+    
     public function findByPostCode($city)
     {
         if(!$city)$city="paris";
