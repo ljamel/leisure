@@ -36,9 +36,17 @@
 							<span class="sr-only">Next</span>
 					</a>
 					<form method="post" action="{{ path('chearch') }}" class="op-5 mb-5 p-3 form-inline chearch carousel-indicators align-top bg-light shadow">
-                                                <div class="form-group w-50 mb-2">
+                                                <div class="form-group w-50 mb-2 ml-n5 mr-n5">
                                                     <label for="inputcity" class="sr-only">Ville</label>
-                                                    <i class="fas fa-map-marker-alt mr-n3 position-relative opacity-5"></i><input name="city" type="text" class="pl-4 form-control rounded-0 border-1 mr-3" placeholder="Votre une ville">
+                                                    <select class="form-control mr-3 " id="pet-select" name="city">
+                                                        <option value="">CHOISIR UNE VILLE</option>
+                                                        <option value="paris">Paris</option>
+                                                        <option value="marseille">Marseille</option>
+                                                        <option value="lille">Lille</option>
+                                                        <option value="normandi">Normandie</option>
+                                                        <option value="bordeaux">Bordeaux</option>
+                                                        <option value="strasbourg">Strasbourg</option>
+                                                    </select>
                                                     <label for="inputcity" class="sr-only">Type d'activité</label>
                                                     <i class="fas fa-child mr-n3 position-relative opacity-5"></i><input name="type" type="text" class="pl-4 pr-2 form-control rounded-0 border-1 mr-3 w-25" placeholder="Type d'activité">
                                                     <label for="inputprice" class="sr-only">Budget</label>
@@ -48,7 +56,7 @@
 					</form>
 			</div>
     <div class="mx-auto w-75 mt-1">
-        <span class="ml-n4 d-flex h4"><h2>BON PLANS ACTIVITÉS DE LOISIRS  {% for nbActivitie in nbActivitys %} {{ nbActivitie.1  }} {% endfor %} ACTIVITÉS</h2></span>
+        <span class="ml-n4 d-flex h4"><h2>BON PLANS ACTIVITÉS DE LOISIRS.  {% for nbActivitie in nbActivitys %} {{ nbActivitie.1  }} {% endfor %} ACTIVITÉS DE LOISIRS </h2></span>
     </div>
                 
     <div id="content" class="mx-auto card-deck col-10 mt-1">

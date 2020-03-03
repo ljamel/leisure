@@ -28,7 +28,7 @@ class ActivitysRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('a')
             ->Where('a.Ville LIKE :val')
             ->orWhere('a.Title LIKE :type')
-            ->orWhere('a.Description LIKE :type')
+            ->andWhere('a.Description LIKE :type')
             ->andWhere('a.Prices <= :price')
             ->setParameter('type', '%'.$type.'%')
             ->setParameter('val', '%'.$city.'%')

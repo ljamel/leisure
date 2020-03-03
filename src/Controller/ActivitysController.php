@@ -53,6 +53,12 @@ class ActivitysController extends AbstractController
         $repo = $this->getDoctrine()->getRepository(\App\Entity\Activitys::class);
         $result = $repo->findOneBy(['Title' =>$title]);
         
+        if(!$result){
+            $result = $repo->findByCat($title);
+        
+            return $this->render('holidaysnew/cat.html.twig',[
+            'activitys' => $result, 'title' => $title]);
+        }
         
         return $this->render('holidaysnew/show.html.twig',[
                 'activity' => $result]);

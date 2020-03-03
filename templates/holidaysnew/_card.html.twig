@@ -12,7 +12,7 @@
                 {% endif %}
                 <div class="card-body">
                     <h2 class="card-title text-primary">{{ activity.title }}</h2>
-                    <p class="card-text">{{ activity.description }}</p>
+                    <p class="card-text">{{ activity.description|slice(0, 250) }}...</p>
                 </div>
                 <div class="card-body">
                     {% if activity.prices > 1 %}

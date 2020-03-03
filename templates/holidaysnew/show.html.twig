@@ -32,7 +32,7 @@
                           <p class="col-10 text-justify">{{ activity.description }} </p>
                           <footer class="blockquote-footer ml-3">Adresse </footer>
                           <div class="ml-3">
-                              {{ activity.address }} <br /> {{ activity.ville }}
+                              {{ activity.address }} <br /> {{ activity.ville }} <br /> {{ activity.postcode }}
                               {{ app.session.set('ville', activity.ville) }}
                           </div>
                         </blockquote>
