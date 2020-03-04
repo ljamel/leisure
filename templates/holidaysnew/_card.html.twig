@@ -18,7 +18,7 @@
                     {% if activity.prices > 1 %}
                         <button type="button" class="btn btn-rose rounded-0">{{ activity.prices }} €</button> 
                     {% endif %}
-                    <span type="button" class="btn btn-rose rounded-0"><a href="{{ path('show', {title: activity.title}) }}" class="text-white">Plus d'infos</a></span>
+                    <span type="button" class="btn btn-rose rounded-0"><a href="{{ path('show', {title: activity.slug}) }}" class="text-white">Plus d'infos</a></span>
                 </div>
             </div>
 

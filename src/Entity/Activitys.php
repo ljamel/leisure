@@ -93,6 +93,11 @@ class Activitys
      * @ORM\ManyToMany(targetEntity="App\Entity\Categorys", inversedBy="activitys")
      */
     private $categorys;
+    
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $slug;
 
     public function __construct()
     {
@@ -311,6 +316,18 @@ class Activitys
         if ($this->categorys->contains($category)) {
             $this->categorys->removeElement($category);
         }
+
+        return $this;
+    }
+    
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(bool $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

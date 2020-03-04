@@ -51,7 +51,7 @@ class ActivitysController extends AbstractController
     public function show($title){
         
         $repo = $this->getDoctrine()->getRepository(\App\Entity\Activitys::class);
-        $result = $repo->findOneBy(['Title' =>$title]);
+        $result = $repo->findOneBy(['slug' =>$title]);
         
         if(!$result){
             $result = $repo->findByCat($title);

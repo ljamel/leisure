@@ -61,7 +61,7 @@ class ActivitysRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    
+
     public function findByCat($cat)
     {
         $cats = explode(" ", $cat);
@@ -70,8 +70,7 @@ class ActivitysRepository extends ServiceEntityRepository
         $result = array();
         foreach($cats as $key => $cat ){
             $result[] = $this->createQueryBuilder('a')
-                ->Where('a.Title LIKE :val')
-                ->orWhere('a.Description LIKE :val')
+                ->Where('a.Description LIKE :val')
                 ->setParameter('val', '%'.$cat.'%')
                 ->orderBy('a.id', 'DESC')
                 ->setMaxResults(50)
