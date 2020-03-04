@@ -37,7 +37,7 @@ class ActivitysController extends AbstractController
     public function result(Request $request)
     {
         $repo = $this->getDoctrine()->getRepository(\App\Entity\Activitys::class);
-        dd($request->request->get('city'));
+        
         $activitys = $repo->findByResult($request->request->get('city'), (int)$request->request->get('price'));
         
         // dump($activitys);die("stopppp");
