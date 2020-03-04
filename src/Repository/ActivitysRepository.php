@@ -24,14 +24,13 @@ class ActivitysRepository extends ServiceEntityRepository
     //  */
     public function findByResult($city="paris", $price=1, $type="jardin")
     {
-        dd($city);
+ 
         return $this->createQueryBuilder('a')
-            ->Where('a.Ville LIKE :val')
-            ->orWhere('a.Title LIKE :type')
+            ->Where('a.Ville = :val')
             ->andWhere('a.Description LIKE :type')
             ->andWhere('a.Prices <= :price')
             ->setParameter('type', '%'.$type.'%')
-            ->setParameter('val', '%'.$city.'%')
+            ->setParameter('val', $city)
             ->setParameter('price', $price)
             ->orderBy('a.id', 'DESC')
             ->setMaxResults(50)
