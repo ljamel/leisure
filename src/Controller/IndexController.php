@@ -9,6 +9,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Products;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Form\ContactFormType;
+use Symfony\Component\HttpFoundation\Request;
+use App\Entity\Contact;
 
 class IndexController extends AbstractController
 {
@@ -20,12 +23,48 @@ class IndexController extends AbstractController
         $repo = $this->getDoctrine()->getRepository(\App\Entity\Activitys::class);
         
         // use for pagination
-        $activitys = $repo->findBy(array(), array('id' => 'desc'), 18, null);
+        $activitys = $repo->findBy(array(), array('Description' => 'desc'), 18, null);
         
         $nbActiviys = $repo->nbActivitys();
         
 //dump($activitys);die("stopppp");
         return $this->render('holidaysnew/index.html.twig', ['activitys' => $activitys, 'nbActivitys' => $nbActiviys]);
+    }
+    
+    /**
+     * @Route("/mentions", name="mentions")
+     */
+    public function mentions()
+    {
+        return $this->render('/mentions-legals.html.twig');
+    }
+    
+    /**
+     * @Route("/contact", name="contact")
+     */
+    public function contact(Request $request)
+    {
+        $user = new Contact();
+        $form = $this->createForm(ContactFormType::class, $user);
+        $form->handleRequest($request);
+
+//        dd($request);
+        
+        if ($form->isSubmitted() && $form->isValid()) {
+//            dump( $form);die("sttooppp");
+            // encode the plain password
+            
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($user);
+            $entityManager->flush();
+
+            // do anything else you need here, like send an email
+            $this->addFlash('success', 'Merci de nous avoir contactés, nous vous répondrons dans les plus brefs délais');
+        }
+        return $this->render('holidaysnew/contact.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
     
     

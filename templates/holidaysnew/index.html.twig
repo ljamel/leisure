@@ -58,6 +58,38 @@
 			</div>
     <div class="mx-auto w-75 mt-1">
         <span class="ml-n4 d-flex h4"><h2>BON PLANS ACTIVITÉS DE LOISIRS.  {% for nbActivitie in nbActivitys %} {{ nbActivitie.1  }} {% endfor %} ACTIVITÉS DE LOISIRS </h2></span>
+        <div class="row">
+           <div class="col-md-4">
+             <div class="thumbnail">
+               <a href="{{ path('category', {'title': 'paris'}) }}">
+                 <img class="hm w-100" src="/templates/holidaysnew/images/paris.jpg" alt="Lights" >
+                 <div class="caption">
+                   <p>Paris</p>
+                 </div>
+               </a>
+             </div>
+           </div>
+           <div class="col-md-4">
+             <div class="thumbnail">
+               <a href="{{ path('category', {'title': 'lion'}) }}">
+                 <img class="hm w-100" src="/templates/holidaysnew/images/lion.jpg" alt="Nature" >
+                 <div class="caption">
+                   <p>Lion</p>
+                 </div>
+               </a>
+             </div>
+           </div>
+           <div class="col-md-4">
+             <div class="thumbnail">
+               <a href="{{ path('category', {'title': 'bordeaux'}) }}">
+                 <img class="hm w-100" src="/templates/holidaysnew/images/bordeaux.jpg" alt="Fjords" >
+                 <div class="caption">
+                   <p>Bordeaux</p>
+                 </div>
+               </a>
+             </div>
+           </div>
+         </div>
     </div>
                 
     <div id="content" class="mx-auto card-deck col-10 mt-1">

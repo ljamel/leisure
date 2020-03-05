@@ -6,8 +6,8 @@
 {% endblock %}
 {% block content %}
 
-okokokok
-	
+    <div class="container">
+    <h1 class="ml-3">Contact</h1>
         {{ form_start(form, {
                     'attr': {
                         'novalidate': 'novalidate',
@@ -15,11 +15,13 @@ okokokok
                         }
                     })
                 }}
-            {{ form_row(form.title) }}
-            {{ form_row(form.content) }}
+        {{ form_row(form.title, {'label': 'Objet'}) }}
+        {{ form_row(form.email, {'label': 'Email'}) }}
+        {{ form_row(form.description, {'label': 'Description'}) }}
+        {{ form_row(form.agreeTerms, {'label': 'Accepter les conditions générale'}) }}
 
-            <button type="submit" class="btn btn-primary">Cr�er</button>
+            <button type="submit" class="btn btn-primary">Envoyer</button>
         {{ form_end(form) }}
-	
+    </div>
 
 {% endblock %}
