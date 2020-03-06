@@ -46,6 +46,20 @@ class ActivitysController extends AbstractController
     }
     
     /**
+     * @Route("/activite-par-ville/{city}", name="postcode", defaults={"city": 1})
+     */
+    public function postcode(Request $request){
+        $repo = $this->getDoctrine()->getRepository(\App\Entity\Activitys::class);
+//        dd($request->attributes->get('city'));
+        $activitys = $repo->findByPostCode($request->attributes->get('city'));
+        
+        // dump($activitys);die("stopppp");
+        return $this->render('holidaysnew/result.html.twig',[ 
+                'activitys' => $activitys]); 
+    }
+    
+    
+    /**
      * @Route("/show_activiter/{title}", name="show")
      */
     public function show($title){

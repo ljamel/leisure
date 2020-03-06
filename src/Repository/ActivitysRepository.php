@@ -51,7 +51,8 @@ class ActivitysRepository extends ServiceEntityRepository
     
     public function findByPostCode($city)
     {
-        if(!$city)$city="paris";
+//        dd($city);
+        if(!$city)$city="75";
         return $this->createQueryBuilder('a')
             ->Where('a.postcode LIKE :val')
             ->setParameter('val', $city.'%')
