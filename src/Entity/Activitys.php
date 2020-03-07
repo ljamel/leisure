@@ -325,7 +325,7 @@ class Activitys
         return $this->slug;
     }
 
-    public function setSlug(bool $slug): self
+    public function setSlug($slug): self
     {
         $this->slug = $slug;
 
