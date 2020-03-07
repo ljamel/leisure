@@ -1,0 +1,14 @@
+{# templates/bundles/TwigBundle/Exception/error404.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <img class="w-100" src="/templates/holidaysnew/images/error-2129569_1280.jpg" alt="page non trouvé">
+        <h1>Activités non trouvée</h1>
+
+        <p>
+             <a href="{{ path('home') }}">Revenir à la page d'accueil pour chercher d'autres activités loisirs</a>.
+        </p>
+    </div>
+{% endblock %}
+
