@@ -28,7 +28,7 @@ class ActivitysController extends AbstractController
         $activitys = $repo->findByPage(array(), array('id' => 'desc'), 20, $page);
         
         $paginations = $repo->nbActivitys();
-        $nbbypage = $paginations[0][1] / 11;
+        $nbbypage = $paginations[0][1] / 13;
 //dump($activitys);die("stopppp");
         return $this->render('holidaysnew/activitys.html.twig',[ 
                 'activitys' => $activitys, 'pagination' => $nbbypage]);
