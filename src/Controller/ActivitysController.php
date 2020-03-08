@@ -42,7 +42,7 @@ class ActivitysController extends AbstractController
     {
         $repo = $this->getDoctrine()->getRepository(\App\Entity\Activitys::class);
         
-        $activitys = $repo->findByResult($request->request->get('city'), (int)$request->request->get('price'));
+        $activitys = $repo->findByResult($request->request->get('city'), (int)$request->request->get('price'), $request->request->get('type'));
         
         // dump($activitys);die("stopppp");
         return $this->render('holidaysnew/result.html.twig',[ 
