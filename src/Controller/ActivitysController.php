@@ -12,9 +12,16 @@ use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use App\Form\ActivityFormType;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class ActivitysController extends AbstractController
 {
+    private $session;
+
+    public function __construct(SessionInterface $session)
+    {
+        $this->session = $session;
+    }
     
     /**
      * @Route("/activites/{page}", name="activites")
@@ -25,9 +32,11 @@ class ActivitysController extends AbstractController
         
         // use for pagination
         if($page > 1)$page *=11+1;
-        $activitys = $repo->findByPage(array(), array('id' => 'desc'), 20, $page);
+        $city = $this->session->get('city');
         
-        $paginations = $repo->nbActivitys();
+        $activitys = $repo->findByPage(array(), array('id' => 'desc'), 20, $page, $city);
+        
+        $paginations = $repo->nbActivitys($this->session->get('city'));
         // after many testing just this solution
         $nbbypage = $paginations[0][1] / 12;
 //dump($activitys);die("stopppp");
@@ -40,6 +49,12 @@ class ActivitysController extends AbstractController
      */
     public function result(Request $request)
     {
+        // stores an attribute in the session for later reuse
+        $this->session->set('city', $request->request->get('city'));
+
+        // gets an attribute by name
+       // $this->session->get('city');
+        
         $repo = $this->getDoctrine()->getRepository(\App\Entity\Activitys::class);
         
         $activitys = $repo->findByResult($request->request->get('city'), (int)$request->request->get('price'), $request->request->get('type'));
@@ -90,7 +105,7 @@ class ActivitysController extends AbstractController
         $repo = $this->getDoctrine()->getRepository(\App\Entity\Activitys::class);
         
         // utiliser like <<<------
-        $result = $repo->findByCat($title);
+        $result = $repo->findByCat($title, $this->session->get('city'));
         
         return $this->render('holidaysnew/cat.html.twig',[
                 'activitys' => $result, 'title' => $title]);

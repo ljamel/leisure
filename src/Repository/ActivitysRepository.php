@@ -39,8 +39,11 @@ class ActivitysRepository extends ServiceEntityRepository
         ;
     }
     
-    public function findByPage($arr, $order, $limit, $page){
+    public function findByPage($arr, $order, $limit, $page, $city){
+//        dd($city);
         return $this->createQueryBuilder('a')
+            ->Where('a.Ville LIKE :val')
+            ->setParameter('val', $city.'%')
             ->orderBy('a.id', 'DESC')
             ->setFirstResult($page)
             ->setMaxResults($limit)
@@ -49,10 +52,8 @@ class ActivitysRepository extends ServiceEntityRepository
         ;
     }
     
-    public function findByPostCode($city)
+    public function findByPostCode($city=75)
     {
-//        dd($city);
-        if(!$city)$city="75";
         return $this->createQueryBuilder('a')
             ->Where('a.postcode LIKE :val')
             ->setParameter('val', $city.'%')
@@ -63,7 +64,7 @@ class ActivitysRepository extends ServiceEntityRepository
         ;
     }
 
-    public function findByCat($cat)
+    public function findByCat($cat, $city="paris")
     {
         $cats = explode("-", $cat);
 //        dd($cats);
@@ -72,9 +73,11 @@ class ActivitysRepository extends ServiceEntityRepository
         foreach($cats as $key => $cat ){
             $result[] = $this->createQueryBuilder('a')
                 ->Where('a.Description LIKE :val')
+                ->andWhere('a.Ville LIKE :city')
                 ->setParameter('val', '%'.$cat.'%')
+                ->setParameter('city', $city.'%')
                 ->orderBy('a.id', 'DESC')
-                ->setMaxResults(50)
+                ->setMaxResults(150)
                 ->getQuery()
                 ->getResult()
             ;
@@ -88,7 +91,21 @@ class ActivitysRepository extends ServiceEntityRepository
         
     }
     
-    public function nbActivitys()
+    public function nbActivitys($city)
+    {
+        return $this->createQueryBuilder('a')
+               ->Where('a.Ville LIKE :val')
+               ->setParameter('val', $city.'%')
+               ->andWhere('a.publish = :val')
+               ->setParameter('val', 1)
+               ->select('count(a.Title)')
+               ->setMaxResults(1)
+               ->getQuery()
+               ->getResult()
+            ;
+    }
+    
+    public function nbActivitysToto()
     {
         return $this->createQueryBuilder('a')
                ->Where('a.publish = :val')

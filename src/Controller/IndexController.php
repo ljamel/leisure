@@ -25,7 +25,7 @@ class IndexController extends AbstractController
         // use for pagination
         $activitys = $repo->findBy(array(), array('Description' => 'desc'), 10, null);
         
-        $nbActiviys = $repo->nbActivitys();
+        $nbActiviys = $repo->nbActivitysToto();
         
 //dump($activitys);die("stopppp");
         return $this->render('holidaysnew/index.html.twig', ['activitys' => $activitys, 'nbActivitys' => $nbActiviys]);
