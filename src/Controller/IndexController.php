@@ -23,7 +23,7 @@ class IndexController extends AbstractController
         $repo = $this->getDoctrine()->getRepository(\App\Entity\Activitys::class);
         
         // use for pagination
-        $activitys = $repo->findBy(array(), array('Description' => 'desc'), 18, null);
+        $activitys = $repo->findBy(array(), array('Description' => 'desc'), 10, null);
         
         $nbActiviys = $repo->nbActivitys();
         

@@ -65,7 +65,7 @@ class ActivitysRepository extends ServiceEntityRepository
 
     public function findByCat($cat)
     {
-        $cats = explode(" ", $cat);
+        $cats = explode("-", $cat);
 //        dd($cats);
         if(!$cat)$cat="sport";
         $result = array();

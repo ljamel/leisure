@@ -1,6 +1,9 @@
 {% extends "base.html.twig" %}
 
 {% block title %}{{ activity.title }}{% endblock %}
+{% block description %} 
+    {{ activity.description }}
+{% endblock %}  
 {% block head %}
     {{ parent() }}
 {% endblock %}
