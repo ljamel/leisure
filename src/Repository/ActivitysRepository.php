@@ -94,9 +94,9 @@ class ActivitysRepository extends ServiceEntityRepository
     public function nbActivitys($city)
     {
         return $this->createQueryBuilder('a')
-               ->Where('a.Ville LIKE :val')
-               ->setParameter('val', $city.'%')
+               ->Where('a.Ville LIKE :city')
                ->andWhere('a.publish = :val')
+               ->setParameter('city', $city.'%')
                ->setParameter('val', 1)
                ->select('count(a.Title)')
                ->setMaxResults(1)
