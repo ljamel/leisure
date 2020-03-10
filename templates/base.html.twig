@@ -40,7 +40,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                           <a class="dropdown-item" href="{{ path('category', {'title': 'jeu'}) }}">JEUX</a>
                           <a class="dropdown-item" href="{{ path('category', {'title': 'karting-karts'}) }}">KARTING</a>
-                          <a class="dropdown-item" href="{{ path('category', {'title': 'bowling-billard-petanque'}) }}">jeux de boule</a>
+                          <a class="dropdown-item" href="{{ path('category', {'title': 'bowling-billard-petanque'}) }}">BOULODROME</a>
                           <a class="dropdown-item" href="{{ path('category', {'title': 'parc-aventure-jardin'}) }}">PARC</a>
                         </div>
                     </li>
@@ -81,7 +81,7 @@
             <div class="col-xs-12 col-sm-4 col-md-4">
 		<span class="h5">LOISIRSETSPORTS.COM</span>
                 <ul class="list-unstyled">
-                    <li><a href="" class="text-white"> >> A propos </a></li>
+                    <li><a href="{{ path('a-propos') }}" class="text-white"> >> A propos </a></li>
                     <li><a href="" class="text-white"> >> FAQ </a></li>
                     <li><a href="{{ path('contact') }}" class="text-white"> >> Contact </a></li>
                     <li><a href="{{ path('mentions') }}" class="text-white"> >> Mentions légals </a></li>
