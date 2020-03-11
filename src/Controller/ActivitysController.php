@@ -40,9 +40,11 @@ class ActivitysController extends AbstractController
 
         // after many testing just this solution
         $nbbypage = $paginations[0][1] / 12;
+        
+        $linkpage = 8;
 //dump($activitys);die("stopppp");
         return $this->render('holidaysnew/activitys.html.twig',[ 
-                'activitys' => $activitys, 'pagination' => $nbbypage]);
+                'activitys' => $activitys, 'pagination' => $linkpage]);
     }
     
     /**
