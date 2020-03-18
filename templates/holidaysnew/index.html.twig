@@ -68,7 +68,7 @@
         </form>
     </div>
     <div class="mx-auto w-75 mt-1">
-        <span class="d-flex h4"><h2>BON PLANS ACTIVITÉS DE LOISIRS.  {% for nbActivitie in nbActivitys %} {{ nbActivitie.1  }} {% endfor %} ACTIVITÉS DE LOISIRS </h2></span>
+        <span class="d-flex h4"><h2>BON PLANS ACTIVITÉS DE LOISIRS.  {% for nbActivitie in nbActivitys %} {{ nbActivitie.1  }} {% endfor %} ACTIVITÉS DE LOISIRS </h2></span> <a href="{{ path('activites', {page: 0}) }}"> Voir tout <span aria-hidden="true">&raquo;</span> </a>
         <div class="row">
            <div class="col-md-4">
              <div class="thumbnail">
@@ -110,5 +110,10 @@
 
     </div>
     <a href="{{ path('activites', {page: 0}) }}"> Voir tout <span aria-hidden="true">&raquo;</span> </a>
+    
+    {% set idrand = random(['22426950', '22426323']) %}
+    <a href="https://track.effiliation.com/servlet/effi.click?id_compteur={{ idrand }}" rel="nofollow"target="_blank">
+    <img src="https://track.effiliation.com/servlet/effi.show?id_compteur={{ idrand }}" alt="pub" border="0"/>
+</a>
 	
 {% endblock %}
