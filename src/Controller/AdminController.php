@@ -19,6 +19,23 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 class AdminController extends AbstractController
 {
 
+    /**
+     * @Route("/admin", name="admin")
+     * @Security("is_granted('ROLE_ADMIN') ")
+     */
+    public function addActivity(Request $request)
+    {
+        $repo = $this->getDoctrine()->getRepository(\App\Entity\Activitys::class);
+        $repoUser = $this->getDoctrine()->getRepository(\App\Entity\User::class);
+        
+        // use for pagination
+        $activitys = $repo->findBy(array(), array('id' => 'desc'), null, null);
+        
+        $nbUsers = $repoUser->nbUsers();
+        $nbActiviys = $repo->nbActivitysToto();
+        
+        return $this->render('holidaysnew/admin/index.html.twig', ['activitys' => $activitys, 'nbActivitys' => $nbActiviys, 'nbUsers' => $nbUsers]);
+    }
     
     
 }
