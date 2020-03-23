@@ -42,8 +42,8 @@ class ActivitysRepository extends ServiceEntityRepository
     public function findByPage($arr, $order, $limit, $page, $city){
 //        dd($city);
         return $this->createQueryBuilder('a')
-            ->Where('a.Ville LIKE :val')
-            ->setParameter('val', $city.'%')
+            ->Where('a.Ville = :val')
+            ->setParameter('val', $city)
             ->orderBy('a.id', 'DESC')
             ->setFirstResult($page)
             ->setMaxResults($limit)

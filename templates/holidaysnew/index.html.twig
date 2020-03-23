@@ -72,7 +72,7 @@
         <div class="row">
            <div class="col-md-4">
              <div class="thumbnail">
-               <a href="{{ path('postcode', {'city': '75'}) }}">
+               <a href="{{ path('postcode', {'city': '750'}) }}">
                  <img class="hm w-100" src="/templates/holidaysnew/images/paris.jpg" alt="Lights" >
                  <div class="caption">
                    <p>Paris</p>
@@ -113,7 +113,7 @@
     
     {% set idrand = random(['22426950', '22426323']) %}
     <a href="https://track.effiliation.com/servlet/effi.click?id_compteur={{ idrand }}" rel="nofollow"target="_blank">
-    <img src="https://track.effiliation.com/servlet/effi.show?id_compteur={{ idrand }}" alt="pub" border="0"/>
-</a>
+        <img src="https://track.effiliation.com/servlet/effi.show?id_compteur={{ idrand }}" alt="pub" border="0" class="w-100"/>
+    </a>
 	
 {% endblock %}
