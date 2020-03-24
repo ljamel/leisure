@@ -1,0 +1,92 @@
+
+
+
+<p id = "status"></p>
+<a id = "map-link" target="_blank"></a>
+
+
+
+
+
+
+
+
+
+        <div id="map">
+	    <!-- Ici s'affichera la carte -->
+	</div>
+
+        
+        <link rel="stylesheet" href="/templates/holidaysnew/css/openstreetmap.css" />
+        <style type="text/css">
+            #map{ /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
+                height:400px;
+            }
+        </style>
+        <!-- Fichiers Javascript -->
+        <script src="/templates/holidaysnew/js/openstreetmap.js" ></script>
+	<script type="text/javascript">
+            
+            
+            
+            
+            {#function geoFindMe() {#}
+
+  const status = document.querySelector('#status');
+  const mapLink = document.querySelector('#map-link');
+
+  mapLink.href = '';
+  mapLink.textContent = '';
+
+  function success(position) {
+         
+    // On initialise la latitude et la longitude de Paris (centre de la carte)
+    var lat = position.coords.latitude;
+    var lon = position.coords.longitude;
+    var macarte = null;
+    
+    var villes = {
+        {% for activity in activitys %}
+            {% if activity.longitude %}
+                "{{ activity.title }}": { "lat": {{activity.longitude}}, "lon": {{activity.latitude}} },
+            {%endif%}
+        {%endfor%}
+        };
+    
+    // Fonction d'initialisation de la carte
+    function initMap() {
+        // Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
+        macarte = L.map('map').setView([lat, lon], 11);
+        // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, openstreetmap.fr
+        L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+            // Il est toujours bien de laisser le lien vers la source des données
+            attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
+            minZoom: 1,
+            maxZoom: 20
+        }).addTo(macarte);
+        	// Nous parcourons la liste des villes
+	for (ville in villes) {
+		var marker = L.marker([villes[ville].lat, villes[ville].lon]).addTo(macarte);
+                marker.bindPopup(ville);
+	}    
+    }
+
+    initMap(); 
+
+  }
+
+  function error() {
+    status.textContent = 'Unable to retrieve your location';
+  }
+
+  if (!navigator.geolocation) {
+    status.textContent = 'Geolocation is not supported by your browser';
+  } else {
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
+            
+            
+            
+            
+
+        </script>

@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Activitys;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\ORM\EntityManagerInterface;
 
 /**
  * @method Activitys|null find($id, $lockMode = null, $lockVersion = null)
@@ -14,8 +15,8 @@ use Doctrine\Common\Persistence\ManagerRegistry;
  */
 class ActivitysRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
-    {
+    public function __construct(ManagerRegistry $registry, EntityManagerInterface $em){
+        $this->em = $em;
         parent::__construct($registry, Activitys::class);
     }
 
@@ -105,7 +106,7 @@ class ActivitysRepository extends ServiceEntityRepository
             ;
     }
     
-    public function nbActivitysToto()
+    public function nbActivitysTotos()
     {
         return $this->createQueryBuilder('a')
                ->Where('a.publish = :val')
@@ -115,6 +116,12 @@ class ActivitysRepository extends ServiceEntityRepository
                ->getQuery()
                ->getResult()
             ;
+    }
+    
+    
+    public function geolocVille(){
+        $conn = $this->em->getConnection();
+        return "ok";
     }
     
     // /**

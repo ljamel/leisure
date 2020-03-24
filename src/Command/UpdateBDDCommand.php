@@ -41,10 +41,7 @@ class UpdateBDDCommand extends Command
     {
         $conn = $this->em->getConnection();
 
-        $sql = "UPDATE `activitys` SET
-                `description` = concat(`description`, '.  Vous recherchez un club de sport convivial à ', `ville`)
-                where LENGTH(description) < 100
-                and description LIKE '%$input%'";
+        $sql = "UPDATE activitys t, villes o SET t.latitude = o.ville_latitude_deg, t.longitude = o.ville_longitude_deg WHERE t.ville = o.ville_nom_reel and t.latitude = ''";
         
 //        and description LIKE '%bibliothèque%'";
 

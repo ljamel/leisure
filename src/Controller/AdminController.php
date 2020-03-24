@@ -23,7 +23,7 @@ class AdminController extends AbstractController
      * @Route("/admin", name="admin")
      * @Security("is_granted('ROLE_ADMIN') ")
      */
-    public function addActivity(Request $request)
+    public function home(Request $request)
     {
         $repo = $this->getDoctrine()->getRepository(\App\Entity\Activitys::class);
         $repoUser = $this->getDoctrine()->getRepository(\App\Entity\User::class);

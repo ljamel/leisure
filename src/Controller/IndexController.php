@@ -25,7 +25,8 @@ class IndexController extends AbstractController
         // use for pagination
         $activitys = $repo->findBySlug(array("Acrogivry-:-l'Aventure-en-Forêt-3", "Air-Escargot-14", "Acro'Bath,-Parc-de-Loisirs-Nature-2", "Diverti'parc-89", "Bourgogne-Montgolfière-37", "Altimage-ULM-15", "Ludothéque-29027"), array('Description' => 'asc'), null, null);
         
-        $nbActiviys = $repo->nbActivitysToto();
+        $nbActiviys = $repo->nbActivitysTotos();
+        $re = $repo->geolocVille();
         
 //dump($activitys);die("stopppp");
         return $this->render('holidaysnew/index.html.twig', ['activitys' => $activitys, 'nbActivitys' => $nbActiviys]);
