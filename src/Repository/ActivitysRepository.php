@@ -25,7 +25,7 @@ class ActivitysRepository extends ServiceEntityRepository
     //  */
     public function findByResult($city, $price=1, $type="s")
     {
-    if($city == "")$city = "s";
+    if($city == "")$city = "paris";
     if($type == "")$type = "s";
 //        dd($type.$city);
         return $this->createQueryBuilder('a')
@@ -94,6 +94,7 @@ class ActivitysRepository extends ServiceEntityRepository
     
     public function nbActivitys($city)
     {
+        if($city == "")$city = "paris";
         return $this->createQueryBuilder('a')
                ->Where('a.Ville LIKE :city')
                ->andWhere('a.publish = :val')
