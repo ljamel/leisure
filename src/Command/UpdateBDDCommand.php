@@ -41,7 +41,7 @@ class UpdateBDDCommand extends Command
     {
         $conn = $this->em->getConnection();
 
-        $sql = "UPDATE activitys t, villes o SET t.latitude = o.ville_latitude_deg, t.longitude = o.ville_longitude_deg WHERE t.ville = o.ville_nom_reel and t.latitude = ''";
+        $sql = "UPDATE activitys t, villes o SET t.latitude = o.ville_latitude_deg, t.longitude = o.ville_longitude_deg WHERE t.ville = o.ville_nom_reel and t.latitude = 0 limit 100";
         
 //        and description LIKE '%bibliothèque%'";
 

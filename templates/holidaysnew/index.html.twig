@@ -16,10 +16,11 @@
                     <div class="carousel-item active">
                         <img  src="/templates/holidaysnew/images/famille-fete.jpg" class="d-block w-100" alt="vélos">
                         <div class="mb-9 w-50 carousel-caption d-none d-md-block op-5 p-3 position-absolute top-0 mt-5 h-25 ml-5">
-                            <h1 class="h3 text-dark"> Idées loisirs</h1>
+                            <h1 class="h3 text-dark text-justify"> Tous les loisirs et activités de France</h1>
+                            <h2  class="h4 text-dark text-justify">Découvrez des loisirs et des lieux insolites.</h2> 
                             <p class="h5 text-dark text-justify">
-                                Découvraient des loisirs et lieux insolites. <br />Divertissement pour toute la famille et tous les budgets. <br />
-                                Mise à jour régulière des sorties et des événements. <br />Vous trouverez des activités de loisirs près de chez vous. 
+                                Divertissement pour toute la famille et tous les budgets. <br />
+                                Mise à jour régulière des sorties et des événements. <br />Vous trouverez des activités et de loisirs près de chez vous. 
                             </p>
                         </div>
                     </div>
@@ -59,8 +60,8 @@
                     <option value="">Autre</option>
                 </select>
 
-                    <label for="inputactivitys" class="sr-only">Type d'activité</label>
-                    <i class="d-none d-sm-inline fas fa-child mr-n3 position-relative opacity-5 mb-3"></i><input name="type" type="text" class="pl-4 pr-2 form-control rounded-0 border-1 mr-3 mb-3" placeholder="Type d'activité">
+                <label for="inputactivitys" class="sr-only">Recherche</label>
+                <i class="d-none d-sm-inline fas fa-child mr-n3 position-relative opacity-5 mb-3"></i><input name="type" type="text" class="pl-4 pr-2 form-control rounded-0 border-1 mr-3 mb-3" placeholder="Type d'activité">
 
                 <button type="submit" class="btn btn-outline-danger btn-rose mb-2 rounded-0 mb-3">Recherche</button>
             </div>
@@ -74,8 +75,8 @@
              <div class="thumbnail">
                <a href="{{ path('postcode', {'city': '750'}) }}">
                  <img class="hm w-100" src="/templates/holidaysnew/images/paris.jpg" alt="Lights" >
-                 <div class="caption">
-                   <p>Paris</p>
+                 <div class="position-absolute list-ville-img">
+                   <p class="h2 text-dark">Paris</p>
                  </div>
                </a>
              </div>
@@ -84,8 +85,8 @@
              <div class="thumbnail">
                <a href="{{ path('postcode', {'city': '69'}) }}">
                  <img class="hm w-100" src="/templates/holidaysnew/images/lion.jpg" alt="Nature" >
-                 <div class="caption">
-                   <p>Lion</p>
+                 <div class="position-absolute list-ville-img">
+                   <p class="h2 text-dark">Lion</p>
                  </div>
                </a>
              </div>
@@ -94,8 +95,8 @@
              <div class="thumbnail">
                <a href="{{ path('postcode', {'city': '33'}) }}">
                  <img class="hm w-100" src="/templates/holidaysnew/images/bordeaux.jpg" alt="sun" >
-                 <div class="caption">
-                   <p>Bordeaux</p>
+                 <div class="position-absolute list-ville-img">
+                   <p class="h2 text-dark">Bordeaux</p>
                  </div>
                </a>
              </div>

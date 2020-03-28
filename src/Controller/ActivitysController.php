@@ -96,8 +96,10 @@ class ActivitysController extends AbstractController
             'activitys' => $result, 'title' => $title]);
         }
         
+        $resultCat = $repo->findByCat($title, $this->session->get('city'));
+        
         return $this->render('holidaysnew/show.html.twig',[
-                'activity' => $result]);
+                'activity' => $result, 'activitysCat' => $resultCat]);
     }
     
     /**
@@ -109,7 +111,7 @@ class ActivitysController extends AbstractController
         
         // utiliser like <<<------
         $result = $repo->findByCat($title, $this->session->get('city'));
-        
+
         return $this->render('holidaysnew/cat.html.twig',[
                 'activitys' => $result, 'title' => $title]);
     }

@@ -47,9 +47,7 @@
     
     var villes = {
         {% for activity in activitys %}
-            {% if activity.longitude %}
-                "{{ activity.title }}": { "lat": {{activity.longitude}}, "lon": {{activity.latitude}} },
-            {%endif%}
+           "{{ activity.title|default('title') }}": { "lat": {{activity.longitude|default('0')}}, "lon": {{activity.latitude|default('0')}} },
         {%endfor%}
         };
     
