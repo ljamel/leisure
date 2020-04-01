@@ -71,32 +71,42 @@
     <div class="mx-auto w-75 mt-1">
         <span class="d-flex h4"><h2>BON PLANS ACTIVITÉS DE LOISIRS.  {% for nbActivitie in nbActivitys %} {{ nbActivitie.1  }} {% endfor %} ACTIVITÉS DE LOISIRS </h2></span> <a href="{{ path('activites', {page: 0}) }}"> Voir tout <span aria-hidden="true">&raquo;</span> </a>
         <div class="row">
-           <div class="col-md-4">
+           <div class="col-md-3">
              <div class="thumbnail">
                <a href="{{ path('postcode', {'city': '750'}) }}">
-                 <img class="hm w-100" src="/templates/holidaysnew/images/paris.jpg" alt="Lights" >
+                 <img class="hm w-100" src="/templates/holidaysnew/images/paris.jpg" alt="Paris loisirs" >
                  <div class="position-absolute list-ville-img">
-                   <p class="h2 text-dark">Paris</p>
+                   <p class="h2 text-white">Paris</p>
                  </div>
                </a>
              </div>
            </div>
-           <div class="col-md-4">
+           <div class="col-md-3">
              <div class="thumbnail">
                <a href="{{ path('postcode', {'city': '69'}) }}">
-                 <img class="hm w-100" src="/templates/holidaysnew/images/lion.jpg" alt="Nature" >
+                 <img class="hm w-100" src="/templates/holidaysnew/images/lion.jpg" alt="Lion loisirs" >
                  <div class="position-absolute list-ville-img">
-                   <p class="h2 text-dark">Lion</p>
+                   <p class="h2 text-white">Lion</p>
                  </div>
                </a>
              </div>
            </div>
-           <div class="col-md-4">
+           <div class="col-md-3">
              <div class="thumbnail">
                <a href="{{ path('postcode', {'city': '33'}) }}">
-                 <img class="hm w-100" src="/templates/holidaysnew/images/bordeaux.jpg" alt="sun" >
+                 <img class="hm w-100" src="/templates/holidaysnew/images/bordeaux.jpg" alt="Bordeaux loisirs" >
                  <div class="position-absolute list-ville-img">
-                   <p class="h2 text-dark">Bordeaux</p>
+                   <p class="h2 text-white">Bordeaux</p>
+                 </div>
+               </a>
+             </div>
+           </div>
+           <div class="col-md-3">
+             <div class="thumbnail">
+               <a href="{{ path('postcode', {'city': '67'}) }}">
+                 <img class="hm w-100" src="/templates/holidaysnew/images/strasbourg.jpg" alt="strasbourg loisirs" >
+                 <div class="position-absolute list-ville-img">
+                   <p class="h2 text-white">Strasbourg</p>
                  </div>
                </a>
              </div>
@@ -112,9 +122,9 @@
     </div>
     <a href="{{ path('activites', {page: 0}) }}"> Voir tout <span aria-hidden="true">&raquo;</span> </a>
     
-    {% set idrand = random(['22426948', '22426323']) %}
+{#    {% set idrand = random(['22426948', '22426323']) %}
     <a href="https://track.effiliation.com/servlet/effi.click?id_compteur={{ idrand }}" rel="nofollow"target="_blank">
         <img src="https://track.effiliation.com/servlet/effi.show?id_compteur={{ idrand }}" alt="pub" border="0" class="w-100"/>
-    </a>
+    </a>#}
 	
 {% endblock %}

@@ -8,13 +8,18 @@
     color: white;
 }
 .list-ville-img{
-    top: 4em;
-    margin-left: 7em;
-    display: none;
+    top: 2em;
+    margin-left: 5em;
+
 }
-.thumbnail:hover .list-ville-img{
-    display: block;
+.thumbnail img{
+    filter: grayscale(0.5);
 }
+.thumbnail:hover img{
+
+    filter: grayscale(0);
+}
+
 
 @media screen and (min-width: 640px) {
     .mw-300{min-width:450px;}
