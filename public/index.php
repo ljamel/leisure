@@ -5,7 +5,12 @@ use Symfony\Component\ErrorHandler\Debug;
 use Symfony\Component\HttpFoundation\Request;
 
 require dirname(__DIR__).'/config/bootstrap.php';
-
+var_dump($_SERVER['SERVER_NAME']);
+if ($_SERVER['SERVER_NAME'] === "localhost" OR $_SERVER['SERVER_NAME'] === "loisirsetsports.com") {
+    
+}else {
+    die(".");
+}
 if ($_SERVER['APP_DEBUG']) {
     umask(0000);
 
