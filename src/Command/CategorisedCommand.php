@@ -80,6 +80,7 @@ class CategorisedCommand extends Command
             foreach($linkimgs as $linkimg){
 //                dump((int)$linkimg["id"]);
                 $activitysimg = $this->getActivitys()->find((int)$linkimg["id"]);
+                dd($activitysimg);
                 $activitysimg->addImage($cat);
             }
 
