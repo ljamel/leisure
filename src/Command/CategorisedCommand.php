@@ -78,10 +78,11 @@ class CategorisedCommand extends Command
             
             $linkimgs = $this->findLike($cat->getImg());
             foreach($linkimgs as $linkimg){
-//                dump((int)$linkimg["id"]);
-                $activitysimg = $this->getActivitys()->find((int)$linkimg["id"]);
-                dd($activitysimg);
-                $activitysimg->addImage($cat);
+
+                if(9999 != $cat->getId()){
+                    $activitysimg = $this->getActivitys()->find((int)$linkimg["id"]);
+                    $activitysimg->addImage($cat);
+                }
             }
 
         }

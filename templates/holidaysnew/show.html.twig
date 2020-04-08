@@ -23,7 +23,7 @@
           {% else %}
               {% for catimg in activity.getImages() %}
                   {% if loop.first %}
-                      <img src="/templates/holidaysnew/images/default-img/{{ catimg.img }}.jpg" class="card-img-top" alt="{{ activity.title }}">         
+                      <img src="/templates/holidaysnew/images/default-img/{{ catimg.img }}-{{ activity.id|slice(1,1) }}.jpg" class="card-img-top" alt="{{ activity.title }}">         
                   {% endif %}
               {% endfor %}
           {% endif %}
