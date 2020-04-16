@@ -139,14 +139,14 @@ class ActivitysController extends AbstractController
         $form->handleRequest($request);
 //        dump($this->getUser());die("stoooppp");
         if ($form->isSubmitted() && $form->isValid()) {
-//            dump( $form);die("sttooppp");
-            // encode the plain password
-            
-//            dump($request->request->get('category'));die("stooopp");
-            
+
             $cat = $cats->find($request->request->get('category'));
-//            dump($cat);die("stooop");
-            $activitys->addCategory($cat);
+
+            if($request->request->get('category')){
+                $cat = $cats->find($request->request->get('category'));
+            }else{
+                $cat = $cats->find(1);
+            }
             
             $activitys->setIduser($this->getUser());
             $activitys->setPublish(0);
