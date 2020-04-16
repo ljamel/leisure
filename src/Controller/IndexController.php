@@ -28,6 +28,8 @@ class IndexController extends AbstractController
         $nbActiviys = $repo->nbActivitysTotos();
         $re = $repo->geolocVille();
         
+          $this->addFlash("success", "Durant le confinement aucune activité externe n'est possible. mais vous pouvez visiter le site pour savoir quoi faire après le confinement");
+        
 //dump($activitys);die("stopppp");
         return $this->render('holidaysnew/index.html.twig', ['activitys' => $activitys, 'nbActivitys' => $nbActiviys]);
     }
