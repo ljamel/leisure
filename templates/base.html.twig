@@ -11,6 +11,7 @@
             <link rel="stylesheet" href="/vendor/components/font-awesome/css/all.min.css">
 {#            <link rel="stylesheet" href="{{ asset('css/app.css') }}">#}
             <link rel="stylesheet" href="/templates/holidaysnew/css/style.css">
+            <script data-ad-client="ca-pub-1365373942429229" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         {% endblock %}
     </head>
     <body>
@@ -30,6 +31,9 @@
 {#                  <li class="nav-item active">
                         <a class="nav-link text-dark" href="/">IDÉES LOISIRS <span class="sr-only">(current)</span></a>
                     </li>#}
+                    <li class="nav-item active">
+                        <a class="nav-link text-dark" href="{{ path('home') }}">ACCUEIL </a>
+                    </li>
                     <li class="nav-item active">
                         <a class="nav-link text-dark" href="{{ path('category', {'title': 'sport'}) }}">SPORT </a>
                     </li>
