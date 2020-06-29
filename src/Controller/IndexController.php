@@ -12,14 +12,20 @@ use Doctrine\ORM\EntityManagerInterface;
 use App\Form\ContactFormType;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Contact;
+use Doctrine\DBAL\Driver\Connection;
 
 class IndexController extends AbstractController
 {
     /**
      * @Route("/", name="home")
      */
-    public function home()
+    public function home(Connection $mysqli)
     {
+
+        // Requetes stocké SQL -> d'abord utiliser CREATE PROCEDURE voir la doc
+        // $res = $mysqli->query("CALL afficher_races()");
+        // dd($res->fetchAll());
+
         $repo = $this->getDoctrine()->getRepository(\App\Entity\Activitys::class);
         
         // use for pagination
@@ -28,8 +34,7 @@ class IndexController extends AbstractController
         $nbActiviys = $repo->nbActivitysTotos();
         $re = $repo->geolocVille();
         
-          $this->addFlash("success", "Durant le confinement aucune activité externe n'est possible. mais vous pouvez visiter le site pour savoir quoi faire après le confinement");
-        
+
 //dump($activitys);die("stopppp");
         return $this->render('holidaysnew/index.html.twig', ['activitys' => $activitys, 'nbActivitys' => $nbActiviys]);
     }
